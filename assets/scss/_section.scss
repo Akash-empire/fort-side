@@ -1,0 +1,302 @@
+
+//>>>>> Section Title Start <<<<<//
+
+.section-title {
+	position: relative;
+	z-index: 99;
+	margin-bottom: 30px;
+
+
+	@include breakpoint (max-md){
+		margin-bottom: 0;
+
+		br {
+			display: none;
+		}
+	}
+
+	.sub-title {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 12px;
+		font-family: $subtitle-font;
+		font-weight: 400;
+		font-size: 24px;
+		color: $theme-color-2;
+
+		 @include breakpoint (max-xl){
+            font-size: 17px;
+        }
+
+		&.style-2 {
+			color: $theme-color-3
+		}
+
+		&.style-8 {
+			color: #D96B1A
+		}
+
+		&.style-9 {
+			color: #0E1305 !important;
+
+			span {
+				color: #E64103 !important;
+			}
+		}
+	}
+
+	&.style-6 {
+		.sub-title {
+			color: #4A6B03;
+
+			.colors {
+				color: #253310;
+			}
+		}
+
+		h2 {
+			color: #253310;
+
+			span {
+				color: #4A6B03;
+			}
+		}
+	}
+
+	&.style-11 {
+		.sub-title {
+			color: #C29254;
+
+			.colors {
+				color: $white;
+			}
+		}
+
+		h2 {
+			color: $white;
+			font-size: 56px;
+			font-weight: 700;
+
+			@include breakpoint(max-xxl){
+				font-size: 50px;
+			}
+
+			@include breakpoint(max-xl){
+				font-size: 40px;
+			}
+
+			@include breakpoint(max-lg){
+				font-size: 36px;
+			}
+
+			@include breakpoint(max-md){
+				font-size: 42px;
+			}
+
+			@include breakpoint(max-sm){
+				font-size: 36px;
+			}
+
+
+			@include breakpoint(max-xxs){
+				font-size: 28px;
+			}
+		}
+	}
+
+	&.style-9 {
+		h2 {
+			font-size: 56px;
+			font-weight: 700;
+
+			@include breakpoint(max-xxl){
+				font-size: 50px;
+
+				br {
+					display: none;
+				}
+			}
+
+			@include breakpoint(max-xl){
+				font-size: 40px;
+			}
+
+			@include breakpoint(max-lg){
+				font-size: 36px;
+			}
+
+			@include breakpoint(max-md){
+				font-size: 42px;
+			}
+
+			@include breakpoint(max-sm){
+				font-size: 36px;
+			}
+
+			@include breakpoint(max-xxs){
+				font-size: 28px;
+			}
+
+			span {
+				color: #E64103;
+			}
+		}
+
+		p {
+			margin-top: 10px;
+		}
+	}
+}
+
+.section-title-area	{
+	@include flex;
+	justify-content: space-between;
+	position: relative;
+	z-index: 9;
+	margin-bottom: 30px;
+
+	@include breakpoint (max-md){
+		margin-bottom: 0;
+
+		br {
+			display: none;
+		}
+	}
+
+	.section-title {
+		margin-bottom: 0;
+	}
+
+	
+	@include breakpoint (max-lg) {
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.nav {
+		@include flex;
+		gap: 15px;
+		flex-wrap: wrap;
+
+		.nav-item {
+			.nav-link {
+				display: inline-block;
+				font-size: 16px;
+				font-weight: 600;
+				color: $header-color;
+				border: 1px solid rgba(30, 29, 35, 0.22);
+				height: 51px;
+				line-height: 51px;
+				padding: 0 25px;
+				border-radius: 4px;
+
+				&.active {
+					background: $theme-color-3;
+					border-color: $theme-color-3;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.section-title-2 {
+	margin-bottom: 30px;
+
+	@include breakpoint (max-md){
+		margin-bottom: 0;
+
+		br {
+			display: none;
+		}
+	}
+
+	.sub-title {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: uppercase;
+		margin-bottom: 12px;
+	}
+
+	.title {
+		font-size: 100px;
+		text-transform: uppercase;
+		letter-spacing: -0.01em;
+		line-height: 100%;
+
+		@include breakpoint (max-xxl){
+			font-size: 80px;
+		}
+
+		@include breakpoint (max-xl){
+			font-size: 65px;
+		}
+
+		@include breakpoint (max-lg){
+			font-size: 50px;
+		}
+
+		@include breakpoint (max-sm){
+			font-size: 42px;
+		}
+
+		@include breakpoint (max-xxs){
+			font-size: 38px;
+		}
+
+		@include breakpoint (max-xs){
+			font-size: 32px;
+		}
+	}
+}
+
+.bg-color-7 {
+	background-color: #102B2A;
+}
+
+//>>>>> Section Title End <<<<<//
+
+//>>>>> Basic Css Start <<<<<//
+
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.section-bg {
+	background-color: $bg-color !important;
+}
+
+.section-bg-2 {
+	background-color: #FBF3E6 !important;
+}
+
+.theme-bg {
+	background-color: $theme-color;
+}
+
+.section-padding {
+	padding: 120px 0;
+
+	@include breakpoint(max-xl){
+		padding: 100px 0;
+	}
+
+	@include breakpoint(max-lg){
+		padding: 80px 0;
+	}
+}
+
+.section-padding-2 {
+	padding: 60px 0;
+}
+//>>>>> Basic Css End <<<<<//
+
+
+.sec-bg {
+	background: #F4F1EA;
+}

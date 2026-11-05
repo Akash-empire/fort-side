@@ -1,0 +1,383 @@
+.faq-items-style-1 {
+    max-width: 1095px;
+    margin: 0 auto;
+    margin-top: 55px;
+
+  .accordion-box {
+    position: relative;
+
+    .block {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid #D9D9D9;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      line-height: 1;
+
+
+      .acc-btn {
+        position: relative;
+        font-size: 24px;
+        color: $header-color;
+        font-weight: 600;
+        font-family: $heading-font;
+        cursor: pointer;
+        transition: all 500ms ease;
+        @include flex;
+        justify-content: space-between;
+        padding: 11px 30px;
+        padding-right: 14px;
+        gap: 14px;
+
+        @include breakpoint(max-xxl) {
+          line-height: 1.4;
+        }
+
+        @include breakpoint(max-xxs) {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+
+        .icon {
+          max-width: 39px;
+          height: 39px;
+          font-size: 16px;
+          line-height: 39px;
+          background-color: #F4F1EA;
+          transition: all 500ms ease;
+          border-radius: 50%;
+          color: $header-color;
+          text-align: center;
+          width: 100%;
+
+          &:before {
+            content: "\f067"; 
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 900;
+            color: $header-color;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      .acc-content {
+        position: relative;
+        display: none;
+        padding: 30px 30px;
+        padding-top: 22px;
+
+         @include breakpoint(max-xxs) {
+          padding: 18px 20px;
+        }
+
+        .content {
+          position: relative;
+
+          .text {
+            line-height: 175%;
+            font-size: 18px;
+            font-weight: 400;
+            color: #666666;
+            max-width: 885px;
+
+            @include breakpoint(max-xxs) {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      // Active block styles
+      &.active-block {
+        border-radius: 12px;
+
+        .acc-btn {
+          background-color: $header-color;
+          border-radius: 12px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          color: $white !important;
+
+          .icon:before {
+            content: "\f068"; // minus icon when active
+            color: $header-color;
+          }
+        }
+      }
+    }
+
+    // Show content if marked current
+    .block .acc-content.current {
+      display: block;
+    }
+
+    .block:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.faq-wrapper-9 {
+    padding-bottom: 60px;
+
+    @include breakpoint (max-xxl) {
+        padding-bottom: 0;
+    }
+
+    .faq-content {
+        margin-right: 130px;
+
+        @include breakpoint (max-xxl) {
+            margin-right: 0;
+        }
+
+        .box {
+            background-color: $white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 130px;
+            max-width: 526px;
+            width: 100%;
+
+            @include breakpoint (max-lg) {
+                margin-top: 30px;
+                max-width: initial;
+            }
+
+            p {
+                margin-top: 10px;
+                margin-bottom: 30px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 26px;
+            }
+
+            .theme-btn {
+                background-color: #E64103;
+                color: $white;
+                border-radius: 100px;
+            }
+        }
+    }
+
+    .accordion-box {
+        position: relative;
+
+        .block {
+            position: relative;
+            background-color: $white;
+            margin-bottom: 20px;
+            line-height: 1;
+            border-radius: 32px;
+            max-width: 937px;
+
+            .acc-btn {
+                position: relative;
+                font-size: 24px;
+                color: #070220;
+                font-weight: 600;
+                font-family: $heading-font;
+                cursor: pointer;
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+                padding: 20.5px 25px;
+                text-transform: capitalize;
+
+                @include breakpoint (max-xxl){
+                    padding-right: 60px;
+                    line-height: 1.4;
+                    font-size: 18px;
+                }
+
+                 @include breakpoint (max-lg){
+                    padding: 25px 20px;
+                    padding-right: 80px;
+                }
+
+                @include breakpoint (max-xxs){
+                    font-size: 18px;
+                }
+
+
+                .icon {
+                    position: absolute;
+                    right: 30px;
+                    top: 22px;
+                    font-size: 16px;
+                    color: #222E48;
+                    -webkit-transition: all 500ms ease;
+                    transition: all 500ms ease;
+
+                     @include breakpoint (max-xxl){
+                        right: 18px;
+                    }
+                }
+            }
+
+            .acc-content {
+                position: relative;
+                display: none;
+                padding: 25px 25px;
+                padding-top: 0;
+
+                @include breakpoint (max-xxs){
+                    margin-top: 10px;
+                }
+
+                .content {
+                    position: relative;
+
+                    .text {
+                        line-height: 160%;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #222E48;
+                        max-width: 572px;
+
+                        @include breakpoint (max-xl){
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-box .block .acc-content.current {
+        display: block;
+    }
+
+    .accordion-box .block .acc-btn.active .icon:before {
+        content: "\f00d";
+    }
+
+    .accordion-box .block:last-child {
+        margin-bottom: 0;
+    }
+
+    .active-block {
+        background-color: #fff !important;
+        border: 1px solid #E64103;
+
+        .acc-btn {
+            color: #070220 !important;
+        }
+    }
+}
+
+
+.faq-section-9 {
+    position: relative;
+
+    .shape-1 {
+        position: absolute;
+        left: 181px;
+        top: 100px;
+
+         @include breakpoint (max-xxxl) {
+            left: 120px;
+            top: 50px;
+         }
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-2 {
+        position: absolute;
+        left: 18px;
+        top: 120px;
+
+        @include breakpoint (max-xxxl) {
+            top: 70px;
+
+            img {
+                width: 100px;
+            }
+        }
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-3 {
+        position: absolute;
+        left: 44px;
+        bottom: 100px;
+
+         @include breakpoint (max-xxxl) {
+            left:45px;
+            bottom: 41px;
+         }
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-4 {
+        position: absolute;
+        top: 50px;
+        right: 0;
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-5 {
+        position: absolute;
+        top: 110px;
+        right: 35px;
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-6 {
+        position: absolute;
+        top: 270px;
+        right: 0px;
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-7 {
+        position: absolute;
+        right: 60px;
+        bottom: 90px;
+
+         @include breakpoint (max-xxxl) {
+            right: 40px;
+            bottom: 40px;
+
+            img {
+                width: 150px;
+            }
+         }
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+
+    .shape-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        img {
+            @include imgw;
+        }
+
+        @include breakpoint (max-xxl) {
+            display: none;
+        }
+    }
+}

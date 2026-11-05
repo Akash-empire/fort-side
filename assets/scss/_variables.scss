@@ -1,0 +1,37 @@
+
+:root {
+    
+    --body: #F4F1EA;
+    --black: #000;
+    --white: #fff;
+    --theme: #FFC222;
+    --theme2: #00833E;
+    --theme3: #ED1C27;
+    --theme4: #C9AB81;
+    --theme5: #D96B1A;
+    --theme6: #E64103;
+    --header: #1E1D23;
+    --text: #76756D;
+    --border: #FCFCFC;
+    --bg: #F8FAFC;
+    --box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.13);
+    --cube-1: cubic-bezier(0.55, 0.085, 0, 0.99);
+    --cube-2: all .25s cubic-bezier(.645,.045,.355,1);
+    --cube-3: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+// Theme Color - Defualt Colors
+$body-bg: var(--body);
+$black: var(--black);
+$white: var(--white);
+$theme-color: var(--theme);
+$theme-color-2: var(--theme2);
+$theme-color-3: var(--theme3);
+$theme-color-4: var(--theme4);
+$theme-color-5: var(--theme5);
+$theme-color-6: var(--theme6);
+$text-color: var(--text);
+$header-color: var(--header);
+$border-color: var(--border);
+$bg-color: var(--bg);
+$shadow: var(--box-shadow);

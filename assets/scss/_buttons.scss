@@ -1,0 +1,105 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+    font-size: 17px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-weight: 700;
+    text-transform: capitalize;
+    height: 56px;
+    line-height: 56px;
+    background-color: $theme-color;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 32px;
+    color: $header-color;
+    border-radius: 8px;
+    letter-spacing: -2%;
+
+    @include breakpoint (max-sm){
+      padding: 0 22px;
+      font-size: 15px;
+    }
+
+    i {
+      margin-left: 10px;
+    }
+
+    &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: -10px;
+    height: 0;
+    background-color: $theme-color-2;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s ease;
+    z-index: -1;
+    }
+
+    &:hover {
+      color: $white;
+      border-color: $theme-color;
+
+      &::before {
+        width: 800px;
+        height: 800px;
+        display: inline-block;
+      }
+    }
+
+   &.small-btn {
+    height: 53px;
+    line-height: 53px;
+    padding: 0 30px;
+   }
+
+   &.theme-bg-2 {
+    background-color: $theme-color-2;
+    color: $white;
+
+    &::before {
+      background-color: $theme-color;
+    }
+
+    &:hover {
+      color: $header-color;
+    }
+   }
+}
+
+
+
+//>>>>> Component Button End <<<<<//
+
+
+// @keyframes slideRight {
+//     49% {
+//       -webkit-transform: translateX(100%);
+//       transform: translateX(100%);
+//     }
+//     50% {
+//       opacity: 0;
+//       -webkit-transform: translateX(-100%);
+//       transform: translateX(-100%);
+//     }
+//     51% {
+//       opacity: 1;
+//     }
+// }
+
+// @keyframes slideUp {
+//     49% {
+//       -webkit-transform: translateY(-100%);
+//       transform: translateY(-100%);
+//     }
+//     50% {
+//       opacity: 0;
+//       -webkit-transform: translateY(100%);
+//       transform: translateY(100%);
+//     }
+//     51% {
+//       opacity: 1;
+//     }
+// }
