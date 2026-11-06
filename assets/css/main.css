@@ -1246,7 +1246,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 4px 0;
   position: relative;
 }
 @media (max-width: 575px) {
@@ -2563,7 +2563,7 @@ span {
 }
 .header-section-2 .middle-header-2 {
   background: #F4F1EA;
-  padding: 12px 0;
+  padding: 5px 0;
 }
 @media (max-width: 1199px) {
   .header-section-2 .middle-header-2 {
@@ -3077,7 +3077,7 @@ span {
 
 .header-4 .category-btn {
   padding: 14px 20px;
-  border-radius: 85px;
+  border-radius: 18px;
   background-color: var(--theme);
   font-size: 15px;
   cursor: pointer;
@@ -6070,7 +6070,7 @@ span {
 }
 
 .footer-fix-padding-2 {
-  padding-bottom: 277px !important;
+  padding-bottom: 200px !important;
 }
 @media (max-width: 1199px) {
   .footer-fix-padding-2 {
@@ -8017,9 +8017,9 @@ span {
 }
 
 .hero-4 {
-  padding: 130px 0 260px;
+  padding: 130px 0 130px;
   position: relative;
-  margin-top: 264px;
+  margin-top: 207px;
 }
 @media (max-width: 1399px) {
   .hero-4 {
@@ -30330,7 +30330,7 @@ span {
 
 .popular-shop-section-9 {
   position: relative;
-  padding-bottom: 170px !important;
+  padding-bottom: 130px !important;
 }
 @media (max-width: 1399px) {
   .popular-shop-section-9 {
