@@ -4278,7 +4278,7 @@ span {
 .breadcrumb-wrapper {
   position: relative;
   z-index: 9;
-  margin-top: 270px;
+  margin-top: 207px;
 }
 @media (max-width: 1199px) {
   .breadcrumb-wrapper {
@@ -30695,4 +30695,10 @@ span {
 .menu-highlight-section .section-title .nav .nav-item .nav-link.active {
   background-color: #E64103;
   color: var(--white);
+}
+/* ========== Header Logo Size ========== */
+.main-logo img,
+.logo-1 img {
+    width: 240px;
+    height: auto;
 }
