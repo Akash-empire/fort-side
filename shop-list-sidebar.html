@@ -28,7 +28,18 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
-    </head>
+        <style>
+        .qty-wrap { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .add-cart-btn { display: inline-flex; align-items: flex-start; gap: 2px; min-width: 100px; height: 42px; padding: 0 16px; justify-content: center; align-items: center; border: 1px solid var(--theme); border-radius: 10px; background: #FFF8DD; color: #111; font-weight: 700; font-size: 16px; cursor: pointer; }
+        .add-cart-btn span { font-size: 14px; font-weight: 400; vertical-align: super; }
+        .add-cart-btn[hidden] { display: none; }
+        .qty-stepper { display: inline-flex; align-items: center; justify-content: space-between; min-width: 110px; height: 42px; padding: 0 6px; border-radius: 10px; background: var(--theme); color: #111; }
+        .qty-stepper[hidden] { display: none; }
+        .qty-stepper button { background: none; border: 0; color: #111; font-size: 18px; width: 30px; height: 30px; line-height: 1; cursor: pointer; }
+        .qty-val { min-width: 24px; text-align: center; font-size: 16px; font-weight: 600; }
+        .qty-cart { display: inline-flex; align-items: center; height: 42px; padding: 0 16px; border: 1px solid var(--theme); border-radius: 10px; color: #111; font-weight: 700; font-size: 15px; text-decoration: none; }
+        .qty-cart[hidden] { display: none; }
+    </style></head>
     <body>
 
         <div class="page-wrapper">
@@ -757,7 +768,15 @@
                                                         <i class="fa-light fa-star"></i>
                                                     </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -784,7 +803,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -811,7 +838,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -838,7 +873,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -865,7 +908,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -892,7 +943,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -919,7 +978,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -946,7 +1013,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -973,7 +1048,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                                 <div class="shop-list-inner">
@@ -1000,7 +1083,15 @@
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
 <p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
-<div class="d-flex flex-wrap align-items-center gap-3 mt-3"><div class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm"><button class="quantityDecrement" type="button"><i class="fal fa-minus"></i></button><input type="text" value="1" class="quantityValue"><button class="quantityIncrement" type="button"><i class="fal fa-plus"></i></button></div><a href="shop-cart.html" class="theme-btn small-btn">Add to Cart</a></div>
+<div class="qty-wrap mt-3">
+                                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                                        <div class="qty-stepper" hidden>
+                                                            <button type="button" class="qty-dec">&minus;</button>
+                                                            <span class="qty-val">1</span>
+                                                            <button type="button" class="qty-inc">+</button>
+                                                        </div>
+                                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                                    </div>
 </div>
                                                 </div>
                                             </div>
@@ -1308,5 +1399,18 @@
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
         <script type="module" src="assets/js/distortion-img.js"></script>
-    </body>
+        <script>
+        document.querySelectorAll('.qty-wrap').forEach(function (wrap) {
+            var add = wrap.querySelector('.add-cart-btn');
+            var step = wrap.querySelector('.qty-stepper');
+            var val = wrap.querySelector('.qty-val');
+            var cart = wrap.querySelector('.qty-cart');
+            add.addEventListener('click', function () { add.hidden = true; step.hidden = false; cart.hidden = false; val.textContent = '1'; });
+            wrap.querySelector('.qty-inc').addEventListener('click', function () { val.textContent = String(parseInt(val.textContent, 10) + 1); });
+            wrap.querySelector('.qty-dec').addEventListener('click', function () {
+                var n = parseInt(val.textContent, 10) - 1;
+                if (n < 1) { step.hidden = true; cart.hidden = true; add.hidden = false; val.textContent = '1'; } else { val.textContent = String(n); }
+            });
+        });
+    </script></body>
 </html>
