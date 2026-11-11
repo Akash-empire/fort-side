@@ -427,29 +427,16 @@ span {
 
 .loader {
   width: fit-content;
-  font-size: 120px;
-  line-height: 1.5;
-  font-family: "Signika", sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0);
-  -webkit-text-stroke: 1px var(--theme);
-  background: radial-gradient(1.13em at 50% 1.6em, var(--theme) 99%, rgba(0, 0, 0, 0) 101%) calc(50% - 1.6em) 0/3.2em 100% text, radial-gradient(1.13em at 50% -0.8em, rgba(0, 0, 0, 0) 99%, var(--theme) 101%) 50% 0.8em/3.2em 100% repeat-x text;
-  animation: l9 2s linear infinite;
+  line-height: 0;
+}
+.loader img {
+  width: 190px;
+  height: auto;
+  display: block;
 }
 @media (max-width: 575px) {
-  .loader {
-    font-size: 70px;
-  }
-}
-
-.loader:before {
-  content: "Foodies";
-}
-
-@keyframes l9 {
-  to {
-    background-position: calc(50% + 1.6em) 0, calc(50% + 3.2em) 0.8em;
+  .loader img {
+    width: 140px;
   }
 }
 .cursor-outer {
@@ -4278,16 +4265,16 @@ span {
 .breadcrumb-wrapper {
   position: relative;
   z-index: 9;
-  margin-top: 207px;
+  margin-top: 165px;
 }
 @media (max-width: 1199px) {
   .breadcrumb-wrapper {
-    margin-top: 170px;
+    margin-top: 75px;
   }
 }
 @media (max-width: 575px) {
   .breadcrumb-wrapper {
-    margin-top: 130px;
+    margin-top: 70px;
   }
 }
 .breadcrumb-wrapper .bottom-shape {
@@ -4689,17 +4676,17 @@ span {
 }
 
 .footer-section {
-  padding: 110px 0 30px;
+  padding: 0px 0 30px;
   position: relative;
 }
 @media (max-width: 1199px) {
   .footer-section {
-    padding-top: 100px;
+    padding-top: 50px;
   }
 }
 @media (max-width: 991px) {
   .footer-section {
-    padding-top: 80px;
+    padding-top: 40px;
   }
 }
 .footer-section .shape-1 {
@@ -6070,7 +6057,7 @@ span {
 }
 
 .footer-fix-padding-2 {
-  padding-bottom: 200px !important;
+  padding-bottom: 150px !important;
 }
 @media (max-width: 1199px) {
   .footer-fix-padding-2 {
@@ -7226,21 +7213,21 @@ span {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 @media (max-width: 1199px) {
   .section-padding {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 }
 @media (max-width: 991px) {
   .section-padding {
-    padding: 80px 0;
+    padding: 40px 0;
   }
 }
 
 .section-padding-2 {
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 .sec-bg {
@@ -8017,24 +8004,24 @@ span {
 }
 
 .hero-4 {
-  padding: 130px 0 130px;
+  padding: 70px 0 70px;
   position: relative;
-  margin-top: 207px;
+  margin-top: 165px;
 }
 @media (max-width: 1399px) {
   .hero-4 {
-    padding-bottom: 130px;
+    padding-bottom: 70px;
   }
 }
 @media (max-width: 1199px) {
   .hero-4 {
-    padding: 240px 0 100px;
+    padding: 100px 0 60px;
     margin-top: 0;
   }
 }
 @media (max-width: 991px) {
   .hero-4 {
-    padding: 220px 0 80px;
+    padding: 80px 0 50px;
   }
 }
 .hero-4 .bg-shape {
@@ -29881,7 +29868,7 @@ span {
 
 .shop-category-section-9 {
   position: relative;
-  padding-bottom: 120px !important;
+  padding-bottom: 60px !important;
 }
 .shop-category-section-9 .shop-category-rights-9 {
   margin-top: 24px;
@@ -30026,6 +30013,16 @@ span {
   .shop-category-box-9 {
     background: #f9e9e9;
   }
+}
+.shop-category-box-9 .thumb {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.shop-category-box-9 .thumb img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .shop-category-box-9 .cate-content {
   margin-top: 15px;
@@ -30296,6 +30293,12 @@ span {
   font-weight: 400;
   color: #6A7283;
 }
+.popular-shop-card-items-9 .content .price-items .cont del {
+  font-size: 15px;
+  font-weight: 400;
+  color: #9AA0AD;
+  text-decoration: line-through;
+}
 .popular-shop-card-items-9 .content .price-items .cont .price {
   font-size: 24px;
   font-weight: 600;
@@ -30330,21 +30333,22 @@ span {
 
 .popular-shop-section-9 {
   position: relative;
-  padding-bottom: 130px !important;
+  padding-bottom: 60px !important;
+  padding-top: 90px !important;
 }
 @media (max-width: 1399px) {
   .popular-shop-section-9 {
-    padding-bottom: 120px !important;
+    padding-bottom: 50px !important;
   }
 }
 @media (max-width: 1199px) {
   .popular-shop-section-9 {
-    padding-bottom: 100px !important;
+    padding-bottom: 45px !important;
   }
 }
 @media (max-width: 991px) {
   .popular-shop-section-9 {
-    padding-bottom: 80px !important;
+    padding-bottom: 40px !important;
   }
 }
 .popular-shop-section-9 .shape-1 {

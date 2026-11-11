@@ -1,13 +1,13 @@
 .footer-section {
-    padding: 110px 0 30px;
+    padding: 60px 0 30px;
     position: relative;
 
     @include breakpoint (max-xl){
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
     @include breakpoint (max-lg){
-        padding-top: 80px;
+        padding-top: 40px;
     }
 
     .shape-1 {

@@ -43,27 +43,18 @@
 }
 .loader {
     width: fit-content;
-    font-size: 120px;
-    line-height: 1.5;
-    font-family: $heading-font;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #0000;
-    -webkit-text-stroke: 1px $theme-color;
-    background:
-    radial-gradient(1.13em at 50% 1.6em,$theme-color 99%,#0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
-    radial-gradient(1.13em at 50% -0.8em,#0000 99%,$theme-color 101%) 50% .8em/3.2em 100% repeat-x  text;
-    animation: l9 2s linear infinite;
+    line-height: 0;
+    img {
+        width: 150px;
+        height: auto;
+        display: block;
+    }
     @include breakpoint (max-sm){
-        font-size: 70px;
+        img {
+            width: 110px;
+        }
     }
   }
-  .loader:before {
-    content: "Foodies";
-  }
-  @keyframes l9 {
-    to {background-position: calc(50% + 1.6em) 0,calc(50% + 3.2em) .8em}
-}
 
 
 
