@@ -11,7 +11,7 @@
         <!-- ======== Page title ============ -->
         <title>My Profile &ndash; Fort Side Caf&eacute; &amp; Grill</title>
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="shortcut icon" href="assets/img/favicon.png">
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
@@ -28,6 +28,14 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+            .profile-menu { border: 1px solid #ECECEC; border-radius: 6px; padding: 0 20px; }
+            .profile-menu li { border-bottom: 1px solid #ECECEC; }
+            .profile-menu li:last-child { border-bottom: 0; }
+            .profile-menu li a { display: block; padding: 18px 0; color: #6B6B6B; font-size: 17px; font-weight: 500; text-decoration: none; }
+            .profile-menu li a:hover { color: var(--theme); }
+            .profile-menu li:first-child a { color: #3F3F3F; }
+        </style>
     </head>
     <body>
 
@@ -95,12 +103,13 @@
                                 <div class="col-lg-4">
                                    
                                     <div class="checkout-single boxshado-single mt-4">
-                                        <h3>Quick Links</h3>
-                                        <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="order-tracking.html">Order Tracking</a></li>
-                                            <li class="mb-2"><a href="wishlist.html">My Wishlist</a></li>
-                                            <li class="mb-2"><a href="shop-cart.html">My Cart</a></li>
-                                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                        <ul class="list-unstyled mb-0 profile-menu">
+                                            <li><a href="profile.html">User Profile</a></li>
+                                            <li><a href="order-tracking.html">Orders</a></li>
+                                            <li><a href="profile.html">Address</a></li>
+                                            <li><a href="order-tracking.html">Track Order</a></li>
+                                            <li><a href="new-password.html">Change Password</a></li>
+                                            <li><a href="sign-in.html">Logout</a></li>
                                         </ul>
                                     </div>
                                 </div>
