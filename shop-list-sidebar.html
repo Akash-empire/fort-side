@@ -39,6 +39,21 @@
         .qty-val { min-width: 24px; text-align: center; font-size: 16px; font-weight: 600; }
         .qty-cart { display: inline-flex; align-items: center; height: 42px; padding: 0 16px; border: 1px solid var(--theme); border-radius: 10px; color: #111; font-weight: 700; font-size: 15px; text-decoration: none; }
         .qty-cart[hidden] { display: none; }
+        /* List view shown as a responsive product grid (content unchanged) */
+        #list .shop-list-area { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+        @media (max-width: 1199px) { #list .shop-list-area { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 575px) { #list .shop-list-area { grid-template-columns: minmax(0, 1fr); } }
+        #list .shop-list-inner { flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; gap: 0; margin-top: 0; padding: 18px 22px 35px; overflow: hidden; }
+        #list .shop-list-inner .shape { display: none; }
+        #list .shop-list-inner::after { content: "+"; position: absolute; top: 0; right: 30px; width: 36px; height: 48px; background: #0B7A3B; color: #fff; font-size: 30px; font-weight: 500; line-height: 46px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%); z-index: 2; }
+        #list .shop-list-inner .thumb { width: 100%; background: #F4F1EA; padding: 30px 20px 45px; box-sizing: border-box; border-radius: 18px 18px 90px 90px / 18px 18px 40px 40px; display: flex; justify-content: center; }
+        #list .shop-list-inner .thumb img { width: auto; max-width: 100%; max-height: 200px; object-fit: contain; }
+        #list .shop-list-inner .content { width: 100%; padding-top: 20px; }
+        #list .shop-list-inner .content .star { justify-content: center; }
+        #list .shop-list-inner .content .title { font-size: 24px; }
+        #list .shop-list-inner .content .text { margin-left: auto; margin-right: auto; font-size: 14px; }
+        #list .shop-list-inner .content .price { font-size: 26px; font-weight: 700; color: #0B7A3B; }
+        #list .qty-wrap { justify-content: center; }
     </style></head>
     <body>
 
@@ -767,7 +782,7 @@
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-light fa-star"></i>
                                                     </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -802,7 +817,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -837,7 +852,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -872,7 +887,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -907,7 +922,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -942,7 +957,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -977,7 +992,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -1012,7 +1027,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -1047,7 +1062,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>
@@ -1082,7 +1097,7 @@
                                                             <i class="fa-etch fa-solid fa-star"></i>
                                                             <i class="fa-light fa-star"></i>
                                                         </div>
-<p class="text">Find top-rated dinnerware, flatware and barware at Foodies. Delectus error inventore aspernatur nisi qui. Distinctio deleniti eligendi esse est neque rerum minus. Consequatur iure voluptatem autem cupiditate.</p>
+<p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
 <div class="qty-wrap mt-3">
                                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                                         <div class="qty-stepper" hidden>

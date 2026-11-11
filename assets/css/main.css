@@ -5047,7 +5047,7 @@ span {
 }
 
 .footer-widget-wrapper {
-  padding: 90px 0 120px;
+  padding: 90px 0 60px;
 }
 @media (max-width: 1199px) {
   .footer-widget-wrapper {
