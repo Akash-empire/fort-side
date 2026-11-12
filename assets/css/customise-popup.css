@@ -264,3 +264,29 @@
 td .old-price {
     margin-right: 8px;
 }
+
+/* Rating by number (out of 5) with the count of customers who purchased */
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 2px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.rating i {
+    font-size: 14px;
+    color: #0B7A3B;
+}
+
+.rating .rating-value {
+    font-weight: 700;
+    color: #0B7A3B;
+}
+
+.rating .rating-count {
+    font-weight: 500;
+    color: #7e808c;
+}

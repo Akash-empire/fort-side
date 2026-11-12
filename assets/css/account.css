@@ -1,0 +1,191 @@
+/* ===== Account pages (profile, orders, address, change password) ===== */
+
+/* Account menu: clear, light borders */
+.profile-menu {
+    border: 1px solid #D5CCB8;
+    border-radius: 8px;
+    padding: 0 22px;
+    background: #fff;
+}
+
+.profile-menu li {
+    border-bottom: 1px solid #DDD5C3;
+}
+
+.profile-menu li:last-child {
+    border-bottom: 0;
+}
+
+.profile-menu li a {
+    display: block;
+    padding: 18px 0;
+    color: #6B6B6B;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.profile-menu li a:hover {
+    color: var(--theme);
+}
+
+.profile-menu li.active a {
+    color: #3F3F3F;
+    font-weight: 600;
+}
+
+.account-page-title {
+    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1E1D23;
+}
+
+/* Orders page: 2-column order cards inside the narrower content column */
+.account-content .view-order-tracking-wrapper .recent-orders-section .orders-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 575px) {
+    .account-content .view-order-tracking-wrapper .recent-orders-section .orders-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.account-content .order-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.account-content .order-link:hover .order-item-card {
+    border-color: var(--theme);
+}
+
+/* Address page */
+@media (max-width: 575px) {
+    .account-content .view-order-tracking-wrapper .shipping-info-section .info-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.account-content .address-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: #E6F5EC;
+    color: #0B7A3B;
+    font-size: 12px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.account-content .address-actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #EAECF0;
+}
+
+.account-content .address-actions a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3F3F3F;
+    text-decoration: none;
+}
+
+.account-content .address-actions a:hover {
+    color: var(--theme);
+}
+
+.account-content .address-actions a.danger {
+    color: #C0392B;
+}
+
+/* Change password page */
+.account-content .form-message {
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.account-content .form-message.error {
+    color: #C0392B;
+}
+
+.account-content .form-message.success {
+    color: #0B7A3B;
+}
+
+/* Show / hide password eye icon */
+.account-content .password-field {
+    position: relative;
+}
+
+.account-content .password-field input {
+    padding-right: 52px;
+}
+
+.account-content .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    padding: 4px;
+    border: 0;
+    background: none;
+    color: #6B6B6B;
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.account-content .toggle-password:hover {
+    color: var(--theme);
+}
+
+/* Change password: same cream card + white inner card as the address page */
+.account-content .view-order-tracking-wrapper .shipping-info-section .info-cards-grid.password-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+}
+
+.account-content .password-grid .input-single input {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #DFE0E4;
+    border-radius: 8px;
+    background: #fff;
+    color: #1E1D23;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+}
+
+.account-content .password-grid .input-single input::placeholder {
+    color: #6B6B6B;
+    font-weight: 400;
+}
+
+.account-content .password-grid .input-single input:focus {
+    border-color: var(--theme);
+}
+
+.account-content .password-grid .password-field input {
+    padding-right: 52px;
+}
+
+/* Align the menu and the content card at the same top line, with less space above */
+.profile-section.section-padding {
+    padding-top: 50px;
+}
+
+.profile-section .col-lg-4 > .checkout-single {
+    margin-top: 0 !important;
+}
+
+.account-content .view-order-tracking-wrapper .shipping-info-section {
+    margin-top: 0;
+}

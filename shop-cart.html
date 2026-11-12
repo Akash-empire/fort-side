@@ -217,10 +217,94 @@
             margin-top: 8px;
         }
 
+        .cart-side-col {
+            flex: 0 1 440px;
+            width: 100%;
+            max-width: 440px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .cart-side-col .order-note-box {
+            flex: none;
+            max-width: 100%;
+        }
+
+        .schedule-box {
+            border: 1px solid rgba(60, 60, 60, 0.14);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .schedule-box h2 {
+            margin-bottom: 14px;
+        }
+
+        .schedule-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .schedule-option[hidden] {
+            display: none;
+        }
+
+        .schedule-option input {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            accent-color: #FFC222;
+            cursor: pointer;
+        }
+
+        .schedule-note {
+            margin: 6px 0 16px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .schedule-label {
+            display: block;
+            margin: 14px 0 8px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--header);
+        }
+
+        .schedule-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(60, 60, 60, 0.14);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--header);
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .schedule-select:focus {
+            border-color: var(--theme);
+        }
+
+        .schedule-select:disabled {
+            background: #f4f1ea;
+            color: #9a9a9a;
+            cursor: not-allowed;
+        }
+
         @media (max-width: 991px) {
 
             .cart-total-row .cart-total-items,
-            .order-note-box {
+            .order-note-box,
+            .cart-side-col {
                 flex-basis: 100%;
                 max-width: 100%;
             }
@@ -263,19 +347,22 @@
 
         .similar-grid .shop-list-inner .thumb {
             width: 100%;
+            height: 260px;
             background: #F4F1EA;
-            padding: 30px 20px 45px;
+            padding: 0;
             box-sizing: border-box;
             border-radius: 18px 18px 90px 90px / 18px 18px 40px 40px;
-            display: flex;
-            justify-content: center;
+            display: block;
+            overflow: hidden;
         }
 
         .similar-grid .shop-list-inner .thumb img {
-            width: auto;
-            max-width: 100%;
-            max-height: 200px;
-            object-fit: contain;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
         }
 
         .similar-grid .shop-list-inner .content {
@@ -467,7 +554,6 @@
                                     <input type="text" placeholder="Enter coupon code">
                                     <button type="submit" class="theme-btn alt-color radius-xs">Apply</button>
                                 </form>
-                                <button type="button" class="theme-btn alt-color radius-xs">Update Cart</button>
                             </div>
                         </div>
                     </div>
@@ -503,6 +589,25 @@
                                     before checkout.</p>
                                 <a href="checkout.html" class="theme-btn">Proceed to Checkout</a>
                             </div>
+                            <div class="cart-side-col">
+                            <div class="schedule-box">
+                                <h2>When</h2>
+                                <label class="schedule-option" id="when-now-option" hidden>
+                                    <input type="radio" name="when" id="when-now" value="now">
+                                    <span>As Soon As Possible</span>
+                                </label>
+                                <label class="schedule-option">
+                                    <input type="radio" name="when" id="when-later" value="later" checked>
+                                    <span>Schedule For Later</span>
+                                </label>
+                                <p class="schedule-note" id="schedule-note"></p>
+                                <div id="schedule-fields">
+                                    <label for="schedule-day" class="schedule-label">Day</label>
+                                    <select id="schedule-day" class="schedule-select"></select>
+                                    <label for="schedule-time" class="schedule-label">Time</label>
+                                    <select id="schedule-time" class="schedule-select"></select>
+                                </div>
+                            </div>
                             <div class="order-note-box">
                                 <h2>Order Note</h2>
                                 <label for="order-note" class="order-note-label">Cooking instructions or special
@@ -510,6 +615,7 @@
                                 <textarea id="order-note" rows="8" maxlength="300"
                                     placeholder="E.g. less spicy, no onions, extra sauce on the side, well done burger..."></textarea>
                                 <div class="order-note-count"><span id="order-note-count">0</span>/300 characters</div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -548,14 +654,11 @@
                                         <a href="shop-details.html">Classic Beef Hotdog</a>
                                     </h2>
                                     <div class="price-row mb-2"><del class="old-price">C$22.41</del><span class="price">C$17.93</span></div>
-                                    <div class="star">
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-light fa-star"></i>
+                                    <div class="rating" title="4.7 out of 5 &middot; 49 customers purchased">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="rating-value">4.7</span>
+                                        <span class="rating-count">(49)</span>
                                     </div>
-                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
                                     <div class="qty-wrap mt-3">
                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                         <div class="qty-stepper" hidden>
@@ -584,14 +687,11 @@
                                         <a href="shop-details.html">Crispy Onion Rings</a>
                                     </h2>
                                     <div class="price-row mb-2"><del class="old-price">C$12.06</del><span class="price">C$9.65</span></div>
-                                    <div class="star">
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-light fa-star"></i>
+                                    <div class="rating" title="4.4 out of 5 &middot; 86 customers purchased">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="rating-value">4.4</span>
+                                        <span class="rating-count">(86)</span>
                                     </div>
-                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
                                     <div class="qty-wrap mt-3">
                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                         <div class="qty-stepper" hidden>
@@ -620,14 +720,11 @@
                                         <a href="shop-details.html">Cheesy Beef Nachos</a>
                                     </h2>
                                     <div class="price-row mb-2"><del class="old-price">C$44.84</del><span class="price">C$35.87</span></div>
-                                    <div class="star">
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-light fa-star"></i>
+                                    <div class="rating" title="4.1 out of 5 &middot; 123 customers purchased">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="rating-value">4.1</span>
+                                        <span class="rating-count">(123)</span>
                                     </div>
-                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
                                     <div class="qty-wrap mt-3">
                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                         <div class="qty-stepper" hidden>
@@ -656,14 +753,11 @@
                                         <a href="shop-details.html">Crispy Chicken Burger</a>
                                     </h2>
                                     <div class="price-row mb-2"><del class="old-price">C$24.14</del><span class="price">C$19.31</span></div>
-                                    <div class="star">
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-etch fa-solid fa-star"></i>
-                                        <i class="fa-light fa-star"></i>
+                                    <div class="rating" title="4.8 out of 5 &middot; 160 customers purchased">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="rating-value">4.8</span>
+                                        <span class="rating-count">(160)</span>
                                     </div>
-                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
                                     <div class="qty-wrap mt-3">
                                         <button type="button" class="add-cart-btn">ADD <span>+</span></button>
                                         <div class="qty-stepper" hidden>
@@ -739,6 +833,102 @@
             if (note && count) {
                 note.addEventListener('input', function () { count.textContent = String(note.value.length); });
             }
+        })();
+    </script>
+    <script>
+        // "When" card: Schedule For Later (day + time) based on the restaurant opening hours
+        (function () {
+            // [open, close] in minutes from midnight; null = closed. 0 = Sunday ... 6 = Saturday
+            var HOURS = {
+                0: [630, 1260],   // Sun 10:30 AM - 9:00 PM
+                1: null,          // Mon closed
+                2: [630, 1320],   // Tue 10:30 AM - 10:00 PM
+                3: [630, 1320],   // Wed
+                4: [630, 1320],   // Thu
+                5: [630, 1440],   // Fri 10:30 AM - 12:00 AM
+                6: [630, 1440]    // Sat
+            };
+            var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            var FULL_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var STEP = 30, LEAD = 30; // 30-minute slots, at least 30 minutes ahead
+
+            var daySel = document.getElementById('schedule-day');
+            var timeSel = document.getElementById('schedule-time');
+            var note = document.getElementById('schedule-note');
+            var nowOpt = document.getElementById('when-now-option');
+            var nowRadio = document.getElementById('when-now');
+            var laterRadio = document.getElementById('when-later');
+            var fields = document.getElementById('schedule-fields');
+            if (!daySel || !timeSel) return;
+
+            function fmt(min) {
+                var h = Math.floor(min / 60) % 24, m = min % 60;
+                var ap = h >= 12 ? 'PM' : 'AM';
+                var h12 = h % 12 === 0 ? 12 : h % 12;
+                return h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ap;
+            }
+            function slotsFor(dayOffset, now) {
+                var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + dayOffset);
+                var h = HOURS[d.getDay()];
+                if (!h) return [];
+                var start = h[0];
+                if (dayOffset === 0) {
+                    var nowMin = now.getHours() * 60 + now.getMinutes();
+                    start = Math.max(h[0], Math.ceil((nowMin + LEAD) / STEP) * STEP);
+                }
+                var out = [];
+                for (var t = start; t <= h[1] - STEP; t += STEP) out.push(t);
+                return out;
+            }
+
+            var now = new Date();
+            var nowMin = now.getHours() * 60 + now.getMinutes();
+            var todayHours = HOURS[now.getDay()];
+            var openNow = !!todayHours && nowMin >= todayHours[0] && nowMin < todayHours[1];
+
+            // Day list: next 7 days that still have time slots
+            var days = [];
+            for (var i = 0; i < 7; i++) {
+                if (slotsFor(i, now).length) {
+                    var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+                    var label = (i === 0 ? 'Today, ' : i === 1 ? 'Tomorrow, ' : '') + DAYS[d.getDay()] + ' ' + MONTHS[d.getMonth()] + ' ' + d.getDate();
+                    days.push({ offset: i, label: label, dow: d.getDay() });
+                }
+            }
+            daySel.innerHTML = days.map(function (x) { return '<option value="' + x.offset + '">' + x.label + '</option>'; }).join('');
+
+            function fillTimes() {
+                var off = parseInt(daySel.value, 10) || 0;
+                timeSel.innerHTML = slotsFor(off, now).map(function (t) { return '<option value="' + t + '">' + fmt(t) + '</option>'; }).join('');
+            }
+            daySel.addEventListener('change', fillTimes);
+            fillTimes();
+
+            // Message
+            if (openNow) {
+                note.textContent = 'We’re open now. Order as soon as possible, or schedule your order for later.';
+                nowOpt.hidden = false;
+                nowRadio.checked = true;
+            } else {
+                var next = null;
+                for (var j = 0; j < 7 && !next; j++) {
+                    var dd = new Date(now.getFullYear(), now.getMonth(), now.getDate() + j);
+                    var hh = HOURS[dd.getDay()];
+                    if (hh && (j > 0 || nowMin < hh[0])) next = { dow: dd.getDay(), open: hh[0], offset: j };
+                }
+                var when = next ? (next.offset === 0 ? 'today' : next.offset === 1 ? 'tomorrow' : FULL_DAYS[next.dow]) + ' at ' + fmt(next.open) : 'soon';
+                note.textContent = 'We’re closed right now and open ' + when + '. You can schedule your order for later.';
+            }
+
+            function sync() {
+                var later = laterRadio.checked;
+                daySel.disabled = timeSel.disabled = !later;
+                fields.style.opacity = later ? '' : '0.6';
+            }
+            laterRadio.addEventListener('change', sync);
+            nowRadio.addEventListener('change', sync);
+            sync();
         })();
     </script>
 </body>

@@ -5468,6 +5468,13 @@ span {
   color: var(--white);
   font-size: 16px;
 }
+.footer-bottom .footer-bottom-wrapper .designed-by a {
+  color: var(--theme);
+  font-weight: 600;
+}
+.footer-bottom .footer-bottom-wrapper .designed-by a:hover {
+  text-decoration: underline;
+}
 .footer-bottom .footer-bottom-wrapper .social-icon {
   gap: 10px;
 }

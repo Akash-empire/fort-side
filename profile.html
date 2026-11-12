@@ -29,38 +29,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css">
-    <style>
-        .profile-menu {
-            border: 1px solid #ECECEC;
-            border-radius: 6px;
-            padding: 0 20px;
-        }
-
-        .profile-menu li {
-            border-bottom: 1px solid #ECECEC;
-        }
-
-        .profile-menu li:last-child {
-            border-bottom: 0;
-        }
-
-        .profile-menu li a {
-            display: block;
-            padding: 18px 0;
-            color: #6B6B6B;
-            font-size: 17px;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .profile-menu li a:hover {
-            color: var(--theme);
-        }
-
-        .profile-menu li:first-child a {
-            color: #3F3F3F;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/account.css">
 </head>
 
 <body>
@@ -121,24 +90,23 @@
                     </div>
                 </div>
 
-                <!-- Profile Section Start -->
+                <!-- Account Section Start -->
                 <div class="profile-section section-padding">
                     <div class="container">
                         <div class="row g-4">
                             <div class="col-lg-4">
-
                                 <div class="checkout-single boxshado-single mt-4">
                                     <ul class="list-unstyled mb-0 profile-menu">
-                                        <li><a href="profile.html">User Profile</a></li>
-                                        <li><a href="order-tracking.html">Orders</a></li>
-                                        <li><a href="profile.html">Address</a></li>
+                                        <li class="active"><a href="profile.html">User Profile</a></li>
+                                        <li><a href="orders.html">Orders</a></li>
+                                        <li><a href="address.html">Address</a></li>
                                         <li><a href="order-tracking.html">Track Order</a></li>
-                                        <li><a href="new-password.html">Change Password</a></li>
+                                        <li><a href="change-password.html">Change Password</a></li>
                                         <li><a href="sign-in.html">Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 account-content">
                                 <div class="checkout-single-wrapper">
                                     <div class="checkout-single boxshado-single">
                                         <h2>Personal Details</h2>
@@ -180,7 +148,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Profile Section End -->
+                <!-- Account Section End -->
                 <!-- Common Footer Placeholder Start -->
                 <div id="footer-placeholder"></div>
                 <!-- Common Footer Placeholder End -->
