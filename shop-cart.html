@@ -1,224 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--<< Header Area >>-->
-   <head>
-        <!-- ========== Meta Tags ========== -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="wowtheme7">
-        <meta name="description" content="Foodies – Multipurpose Restaurant & Fast Food HTML Template">
-        <!-- ======== Page title ============ -->
-        <title>Cart &ndash; Fort Side Caf&eacute; &amp; Grill</title>
-        <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.png">
-        <!--<< Bootstrap min.css >>-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <!--<< Main.css >>-->
-        <link rel="stylesheet" href="assets/css/main.css">
-        <style>
-            .cart-total-area .cart-summary { margin-bottom: 20px; max-width: 560px; }
-            .cart-total-area .cart-summary li { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 12px 0; border-bottom: 1px solid #ECECEC; font-size: 18px; font-weight: 500; }
-            .cart-total-area .cart-summary li .subtotal { margin-left: 0; font-weight: 500; }
-            .cart-total-area .cart-summary li.discount-row > span:last-child { color: #0B7A3B; }
-            .cart-total-area .cart-summary li.grand-total { border-bottom: 0; padding-top: 16px; font-size: 20px; font-weight: 700; }
-            .cart-total-area .cart-summary li.grand-total .price { flex-basis: auto; font-size: 24px; }
-            .cart-total-area .cart-note { max-width: 560px; font-size: 14px; color: #76756D; margin-bottom: 30px; }
-            .add-cart-btn { display: inline-flex; align-items: center; justify-content: center; gap: 2px; min-width: 100px; height: 42px; padding: 0 16px; border: 1px solid var(--theme); border-radius: 10px; background: #FFF8DD; color: #111; font-weight: 700; font-size: 16px; cursor: pointer; }
-            .add-cart-btn span { font-size: 14px; font-weight: 400; vertical-align: super; }
-            .add-cart-btn[hidden] { display: none; }
-            .qty-stepper { display: inline-flex; align-items: center; justify-content: space-between; min-width: 110px; height: 42px; padding: 0 6px; border-radius: 10px; background: var(--theme); color: #111; }
-            .qty-stepper[hidden] { display: none; }
-            .qty-stepper button { background: none; border: 0; color: #111; font-size: 18px; width: 30px; height: 30px; line-height: 1; cursor: pointer; }
-            .qty-val { min-width: 24px; text-align: center; font-size: 16px; font-weight: 600; }
-            .qty-cart { display: inline-flex; align-items: center; height: 42px; padding: 0 16px; border: 1px solid var(--theme); border-radius: 10px; color: #111; font-weight: 700; font-size: 15px; text-decoration: none; }
-            .qty-cart[hidden] { display: none; }
-            .cart-total-row { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 40px; }
-            .cart-total-row .cart-total-items { flex: 1 1 520px; min-width: 0; }
-            .cart-total-row .cart-total-items { border: 1px solid rgba(60, 60, 60, 0.14); border-radius: 10px; padding: 30px; }
-            .order-note-box { flex: 0 1 440px; width: 100%; max-width: 440px; border: 1px solid rgba(60, 60, 60, 0.14); border-radius: 10px; padding: 30px; }
-            .order-note-box h2 { margin-bottom: 5px; }
-            .order-note-label { display: block; font-size: 16px; color: var(--text); margin-bottom: 14px; }
-            .order-note-box textarea { width: 100%; resize: vertical; background: transparent; border: 1px solid rgba(60, 60, 60, 0.14); padding: 18px 20px; color: var(--text); line-height: 1.4; border-radius: 10px; font-size: 16px; font-family: inherit; outline: none; }
-            .order-note-box textarea:focus { border-color: var(--theme); }
-            .order-note-count { text-align: right; font-size: 14px; color: var(--text); margin-top: 8px; }
-            @media (max-width: 991px) { .cart-total-row .cart-total-items, .order-note-box { flex-basis: 100%; max-width: 100%; } }
-            /* Similar products in the same card format as shop-list-sidebar */
-            .similar-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; margin-top: 30px; }
-            @media (max-width: 1199px) { .similar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-            @media (max-width: 575px) { .similar-grid { grid-template-columns: minmax(0, 1fr); } }
-            .similar-grid .shop-list-inner { flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; gap: 0; margin-top: 0; padding: 18px 22px 35px; overflow: hidden; }
-            .similar-grid .shop-list-inner .shape { display: none; }
-            .similar-grid .shop-list-inner .thumb { width: 100%; background: #F4F1EA; padding: 30px 20px 45px; box-sizing: border-box; border-radius: 18px 18px 90px 90px / 18px 18px 40px 40px; display: flex; justify-content: center; }
-            .similar-grid .shop-list-inner .thumb img { width: auto; max-width: 100%; max-height: 200px; object-fit: contain; }
-            .similar-grid .shop-list-inner .content { width: 100%; padding-top: 20px; }
-            .similar-grid .shop-list-inner .content .star { justify-content: center; color: #FF7C2B; font-size: 14px; margin-bottom: 8px; }
-            .similar-grid .shop-list-inner .content .title { font-size: 24px; font-weight: 500; }
-            .similar-grid .shop-list-inner .content .title a:hover { color: var(--theme); }
-            .similar-grid .shop-list-inner .content .text { font-size: 14px; font-weight: 500; color: #76756D; margin: 10px auto 0; }
-            .similar-grid .shop-list-inner .content .price { font-size: 26px; font-weight: 700; color: #0B7A3B; }
-            .similar-grid .qty-wrap { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; }
-        </style>
-    </head>
-    <body>
+<!--<< Header Area >>-->
 
-        <div class="page-wrapper">
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wowtheme7">
+    <meta name="description" content="Foodies – Multipurpose Restaurant & Fast Food HTML Template">
+    <!-- ======== Page title ============ -->
+    <title>Cart &ndash; Fort Side Caf&eacute; &amp; Grill</title>
+    <!--<< Favcion >>-->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--<< All Min Css >>-->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!--<< Animate.css >>-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--<< Magnific Popup.css >>-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!--<< MeanMenu.css >>-->
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <!--<< Swiper Bundle.css >>-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--<< Nice Select.css >>-->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!--<< Main.css >>-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .cart-total-area .cart-summary {
+            margin-bottom: 20px;
+            max-width: 560px;
+        }
 
-            <!-- Preloader Start -->
-            <div class="preloader">
-                <div class="loader"><img src="assets/img/logo/fort-side-logo-90h.png" alt="logo"></div>
-            </div>
+        .cart-total-area .cart-summary li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #ECECEC;
+            font-size: 18px;
+            font-weight: 500;
+        }
 
-            <!-- Back To Top Start -->
-            <button id="back-top" class="back-to-top">
-                <i class="fa-regular fa-arrow-up"></i>
-            </button>
+        .cart-total-area .cart-summary li .subtotal {
+            margin-left: 0;
+            font-weight: 500;
+        }
 
-            <!-- MouseCursor Start -->
-            <div class="mouseCursor cursor-outer"></div>
-            <div class="mouseCursor cursor-inner"></div>
+        .cart-total-area .cart-summary li.discount-row>span:last-child {
+            color: #0B7A3B;
+        }
 
-            <!-- Offcanvas Area Start -->
-            <!-- Common Header Placeholder Start -->
+        .cart-total-area .cart-summary li.grand-total {
+            border-bottom: 0;
+            padding-top: 16px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .cart-total-area .cart-summary li.grand-total .price {
+            flex-basis: auto;
+            font-size: 24px;
+        }
+
+        .cart-total-area .cart-note {
+            max-width: 560px;
+            font-size: 14px;
+            color: #76756D;
+            margin-bottom: 30px;
+        }
+
+        .add-cart-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            min-width: 100px;
+            height: 42px;
+            padding: 0 16px;
+            border: 1px solid var(--theme);
+            border-radius: 10px;
+            background: #FFF8DD;
+            color: #111;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .add-cart-btn span {
+            font-size: 14px;
+            font-weight: 400;
+            vertical-align: super;
+        }
+
+        .add-cart-btn[hidden] {
+            display: none;
+        }
+
+        .qty-stepper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 110px;
+            height: 42px;
+            padding: 0 6px;
+            border-radius: 10px;
+            background: var(--theme);
+            color: #111;
+        }
+
+        .qty-stepper[hidden] {
+            display: none;
+        }
+
+        .qty-stepper button {
+            background: none;
+            border: 0;
+            color: #111;
+            font-size: 18px;
+            width: 30px;
+            height: 30px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .qty-val {
+            min-width: 24px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .qty-cart {
+            display: inline-flex;
+            align-items: center;
+            height: 42px;
+            padding: 0 16px;
+            border: 1px solid var(--theme);
+            border-radius: 10px;
+            color: #111;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .qty-cart[hidden] {
+            display: none;
+        }
+
+        .cart-total-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .cart-total-row .cart-total-items {
+            flex: 1 1 520px;
+            min-width: 0;
+        }
+
+        .cart-total-row .cart-total-items {
+            border: 1px solid rgba(60, 60, 60, 0.14);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .order-note-box {
+            flex: 0 1 440px;
+            width: 100%;
+            max-width: 440px;
+            border: 1px solid rgba(60, 60, 60, 0.14);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .order-note-box h2 {
+            margin-bottom: 5px;
+        }
+
+        .order-note-label {
+            display: block;
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 14px;
+        }
+
+        .order-note-box textarea {
+            width: 100%;
+            resize: vertical;
+            background: transparent;
+            border: 1px solid rgba(60, 60, 60, 0.14);
+            padding: 18px 20px;
+            color: var(--text);
+            line-height: 1.4;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .order-note-box textarea:focus {
+            border-color: var(--theme);
+        }
+
+        .order-note-count {
+            text-align: right;
+            font-size: 14px;
+            color: var(--text);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 991px) {
+
+            .cart-total-row .cart-total-items,
+            .order-note-box {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Similar products in the same card format as shop-list-sidebar */
+        .similar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 1199px) {
+            .similar-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 575px) {
+            .similar-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .similar-grid .shop-list-inner {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            gap: 0;
+            margin-top: 0;
+            padding: 18px 22px 35px;
+            overflow: hidden;
+        }
+
+        .similar-grid .shop-list-inner .shape {
+            display: none;
+        }
+
+        .similar-grid .shop-list-inner .thumb {
+            width: 100%;
+            background: #F4F1EA;
+            padding: 30px 20px 45px;
+            box-sizing: border-box;
+            border-radius: 18px 18px 90px 90px / 18px 18px 40px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .similar-grid .shop-list-inner .thumb img {
+            width: auto;
+            max-width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .similar-grid .shop-list-inner .content {
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .similar-grid .shop-list-inner .content .star {
+            justify-content: center;
+            color: #FF7C2B;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .similar-grid .shop-list-inner .content .title {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .similar-grid .shop-list-inner .content .title a:hover {
+            color: var(--theme);
+        }
+
+        .similar-grid .shop-list-inner .content .text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #76756D;
+            margin: 10px auto 0;
+        }
+
+        .similar-grid .shop-list-inner .content .price {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0B7A3B;
+        }
+
+        .similar-grid .qty-wrap {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- Preloader Start -->
+        <div class="preloader">
+            <div class="loader"><img src="assets/img/logo/fort-side-logo-90h.png" alt="logo"></div>
+        </div>
+
+        <!-- Back To Top Start -->
+        <button id="back-top" class="back-to-top">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <!-- MouseCursor Start -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <!-- Offcanvas Area Start -->
+        <!-- Common Header Placeholder Start -->
         <div id="header-placeholder"></div>
         <!-- Common Header Placeholder End -->
 
 
-            <div id="smooth-wrapper">
-                <div id="smooth-content">
-                    <!-- Breadcrumb Section Start -->
-                    <div class="breadcrumb-wrapper hero-ptb image-distortion p-relative z-index-1" data-background="assets/img/breadcrumb-bg.jpg">
-                        <div class="shape-1 d-none d-xl-block">
-                            <img src="assets/img/shape-1.png" alt="img">
-                        </div>
-                        <div class="girl-shape d-none d-xl-block">
-                            <img src="assets/img/girl-image.png" alt="img">
-                        </div>
-                        <div class="bottom-shape">
-                            <img src="assets/img/bottom-shape.png" alt="img">
-                        </div>
-                        <div class="container">
-                            <div class="page-heading">
-                                <div class="breadcrumb-sub-title">
-                                    <h1 class="breadcrumb-title text-white split-title">Shop Cart</h1>
-                                </div>
-                                <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
-                                    <li>
-                                        <a href="index.html">
-                                            Home Page
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="fa-regular fa-chevrons-right"></i>
-                                    </li>
-                                    <li>
-                                    Shop Cart
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <!-- Breadcrumb Section Start -->
+                <div class="breadcrumb-wrapper hero-ptb image-distortion p-relative z-index-1"
+                    data-background="assets/img/breadcrumb-bg.jpg">
+                    <div class="shape-1 d-none d-xl-block">
+                        <img src="assets/img/shape-1.png" alt="img">
                     </div>
 
-                    <!-- cart section start -->
-                    <div class="cart-section section-padding">
-                        <div class="container">
-                            <div class="cart-list-area">
-                                <div class="table-responsive">
-                                    <table class="table common-table">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">Product</th>
-                                                <th class="text-center">Price</th>
-                                                <th class="text-center">Quantity</th>
-                                                <th class="text-center">Subtotal</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="align-items-center py-3">
-                                                <td>
-                                                    <div class="cart-item-thumb d-flex align-items-center gap-4">
-                                                        <i class="fas fa-times"></i>
-                                                        <img class="w-100" src="assets/img/inner-page/shop/shop-cart-01.png" alt="product">
-                                                        <span class="head text-nowrap">Fresh Cream</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="price-usd">
-                                                        C$17.11
-                                                    </span>
-                                                </td>
-                                                <td class="price-quantity text-center">
-                                                    <div
-                                                    class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm">
-                                                    <button class="quantityDecrement"><i class="fal fa-minus"></i></button>
-                                                    <input type="text" value="1" class="quantityValue">
-                                                    <button class="quantityIncrement"><i class="fal fa-plus"></i></button>
+                    <div class="bottom-shape">
+                        <img src="assets/img/bottom-shape.png" alt="img">
+                    </div>
+                    <div class="container">
+                        <div class="page-heading">
+                            <div class="breadcrumb-sub-title">
+                                <h1 class="breadcrumb-title text-white split-title">Shop Cart</h1>
+                            </div>
+                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                                <li>
+                                    <a href="index.html">
+                                        Home Page
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-regular fa-chevrons-right"></i>
+                                </li>
+                                <li>
+                                    Shop Cart
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- cart section start -->
+                <div class="cart-section section-padding">
+                    <div class="container">
+                        <div class="cart-list-area">
+                            <div class="table-responsive">
+                                <table class="table common-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Product</th>
+                                            <th class="text-center">Price</th>
+                                            <th class="text-center">Quantity</th>
+                                            <th class="text-center">Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="align-items-center py-3">
+                                            <td>
+                                                <div class="cart-item-thumb d-flex align-items-center gap-4">
+                                                    <i class="fas fa-times"></i>
+                                                    <img class="w-100" src="assets/img/inner-page/shop/shop-cart-01.png"
+                                                        alt="product">
+                                                    <span class="head text-nowrap">Fresh Cream</span>
                                                 </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="price-usd">
-                                                        C$17.11
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr class="align-items-center py-3">
-                                                <td>
-                                                    <div class="cart-item-thumb d-flex align-items-center gap-4">
-                                                        <i class="fas fa-times"></i>
-                                                        <img class="w-100" src="assets/img/inner-page/shop/shop-cart-02.png" alt="product">
-                                                        <span class="head text-nowrap">Shopping Bag</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="price-usd">
-                                                        C$35.19
-                                                    </span>
-                                                </td>
-                                                <td class="price-quantity text-center">
-                                                    <div
-                                                        class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm">
-                                                        <button class="quantityDecrement"><i class="fal fa-minus"></i></button>
-                                                        <input type="text" value="1" class="quantityValue">
-                                                        <button class="quantityIncrement"><i class="fal fa-plus"></i></button>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="price-usd">
-                                                        C$35.19
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="coupon-items d-flex flex-md-nowrap flex-wrap justify-content-between align-items-center gap-4 pt-4">
-                                    <form action="#" class="d-flex flex-sm-nowrap flex-wrap align-items-center gap-3">
-                                        <input type="text"
-                                            placeholder="Enter coupon code">
-                                        <button type="submit" class="theme-btn alt-color radius-xs">Apply</button>
-                                    </form>
-                                    <button type="button" class="theme-btn alt-color radius-xs">Update Cart</button>
-                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="price-usd">
+                                                    C$17.11
+                                                </span>
+                                            </td>
+                                            <td class="price-quantity text-center">
+                                                <div
+                                                    class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm">
+                                                    <button class="quantityDecrement"><i
+                                                            class="fal fa-minus"></i></button>
+                                                    <input type="text" value="1" class="quantityValue">
+                                                    <button class="quantityIncrement"><i
+                                                            class="fal fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="price-usd">
+                                                    C$17.11
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-items-center py-3">
+                                            <td>
+                                                <div class="cart-item-thumb d-flex align-items-center gap-4">
+                                                    <i class="fas fa-times"></i>
+                                                    <img class="w-100" src="assets/img/inner-page/shop/shop-cart-02.png"
+                                                        alt="product">
+                                                    <span class="head text-nowrap">Shopping Bag</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="price-usd">
+                                                    C$35.19
+                                                </span>
+                                            </td>
+                                            <td class="price-quantity text-center">
+                                                <div
+                                                    class="quantity d-inline-flex align-items-center justify-content-center gap-1 py-2 px-4 border n50-border_20 text-sm">
+                                                    <button class="quantityDecrement"><i
+                                                            class="fal fa-minus"></i></button>
+                                                    <input type="text" value="1" class="quantityValue">
+                                                    <button class="quantityIncrement"><i
+                                                            class="fal fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="price-usd">
+                                                    C$35.19
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div
+                                class="coupon-items d-flex flex-md-nowrap flex-wrap justify-content-between align-items-center gap-4 pt-4">
+                                <form action="#" class="d-flex flex-sm-nowrap flex-wrap align-items-center gap-3">
+                                    <input type="text" placeholder="Enter coupon code">
+                                    <button type="submit" class="theme-btn alt-color radius-xs">Apply</button>
+                                </form>
+                                <button type="button" class="theme-btn alt-color radius-xs">Update Cart</button>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Cart Total section end -->
-                    <div class="cart-total-area section-padding pt-0">
-                        <div class="container">
-                            <div class="cart-total-row">
+                </div>
+
+                <!-- Cart Total section end -->
+                <div class="cart-total-area section-padding pt-0">
+                    <div class="container">
+                        <div class="cart-total-row">
                             <div class="cart-total-items">
                                 <h2>Cart totals</h2>
                                 <ul class="cart-summary">
@@ -241,224 +495,239 @@
                                         <span>Total</span> <span class="price">C$56.24</span>
                                     </li>
                                 </ul>
-                                <p class="cart-note">Free delivery on orders over C$60.00. Taxes and fees are shown before checkout.</p>
+                                <p class="cart-note">Free delivery on orders over C$60.00. Taxes and fees are shown
+                                    before checkout.</p>
                                 <a href="checkout.html" class="theme-btn">Proceed to Checkout</a>
                             </div>
                             <div class="order-note-box">
                                 <h2>Order Note</h2>
-                                <label for="order-note" class="order-note-label">Cooking instructions or special requests</label>
-                                <textarea id="order-note" rows="8" maxlength="300" placeholder="E.g. less spicy, no onions, extra sauce on the side, well done burger..."></textarea>
+                                <label for="order-note" class="order-note-label">Cooking instructions or special
+                                    requests</label>
+                                <textarea id="order-note" rows="8" maxlength="300"
+                                    placeholder="E.g. less spicy, no onions, extra sauce on the side, well done burger..."></textarea>
                                 <div class="order-note-count"><span id="order-note-count">0</span>/300 characters</div>
-                            </div>
                             </div>
                         </div>
                     </div>
-
-                     <!-- Best Food Menu Section Start -->
-                    <section class="best-food-menu-two fix section-padding pt-0">
-                        <div class="shape">
-                            <img src="assets/img/home-2/shape8.png" alt="img">
-                        </div>
-                        <div class="container">
-                            <div class="section-title text-center">
-                                <span class="sub-title tz-sub-tilte tz-sub-anim tx-subTitle">Similar Products</span>
-                                <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
-                                  Your Can Choose This Products
-                                </h2>
-                                <div class="sec-line mt-3">
-                                    <img src="assets/img/home-1/sec-line.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="similar-grid">
-                                <div class="shop-list-inner">
-                                    <div class="shape">
-                                        <svg width="179" height="322" viewBox="0 0 179 322" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z" fill="#F4F1EA"/>
-                                        </svg>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="assets/img/home-4/food-7.png" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <h2 class="title">
-                                            <a href="shop-details.html">Classic Beef Hotdog</a>
-                                        </h2>
-                                        <span class="price d-block mb-2">C$17.93</span>
-                                        <div class="star">
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                        </div>
-                                        <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
-                                        <div class="qty-wrap mt-3">
-                                            <button type="button" class="add-cart-btn">ADD <span>+</span></button>
-                                            <div class="qty-stepper" hidden>
-                                                <button type="button" class="qty-dec">&minus;</button>
-                                                <span class="qty-val">1</span>
-                                                <button type="button" class="qty-inc">+</button>
-                                            </div>
-                                            <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="shop-list-inner">
-                                    <div class="shape">
-                                        <svg width="179" height="322" viewBox="0 0 179 322" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z" fill="#F4F1EA"/>
-                                        </svg>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="assets/img/home-4/food-8.png" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <h2 class="title">
-                                            <a href="shop-details.html">Crispy Onion Rings</a>
-                                        </h2>
-                                        <span class="price d-block mb-2">C$9.65</span>
-                                        <div class="star">
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                        </div>
-                                        <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
-                                        <div class="qty-wrap mt-3">
-                                            <button type="button" class="add-cart-btn">ADD <span>+</span></button>
-                                            <div class="qty-stepper" hidden>
-                                                <button type="button" class="qty-dec">&minus;</button>
-                                                <span class="qty-val">1</span>
-                                                <button type="button" class="qty-inc">+</button>
-                                            </div>
-                                            <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="shop-list-inner">
-                                    <div class="shape">
-                                        <svg width="179" height="322" viewBox="0 0 179 322" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z" fill="#F4F1EA"/>
-                                        </svg>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="assets/img/home-4/food-9.png" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <h2 class="title">
-                                            <a href="shop-details.html">Cheesy Beef Nachos</a>
-                                        </h2>
-                                        <span class="price d-block mb-2">C$35.87</span>
-                                        <div class="star">
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                        </div>
-                                        <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
-                                        <div class="qty-wrap mt-3">
-                                            <button type="button" class="add-cart-btn">ADD <span>+</span></button>
-                                            <div class="qty-stepper" hidden>
-                                                <button type="button" class="qty-dec">&minus;</button>
-                                                <span class="qty-val">1</span>
-                                                <button type="button" class="qty-inc">+</button>
-                                            </div>
-                                            <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="shop-list-inner">
-                                    <div class="shape">
-                                        <svg width="179" height="322" viewBox="0 0 179 322" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z" fill="#F4F1EA"/>
-                                        </svg>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="assets/img/home-4/food-10.png" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <h2 class="title">
-                                            <a href="shop-details.html">Crispy Chicken Burger</a>
-                                        </h2>
-                                        <span class="price d-block mb-2">C$19.31</span>
-                                        <div class="star">
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-etch fa-solid fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                        </div>
-                                        <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
-                                        <div class="qty-wrap mt-3">
-                                            <button type="button" class="add-cart-btn">ADD <span>+</span></button>
-                                            <div class="qty-stepper" hidden>
-                                                <button type="button" class="qty-dec">&minus;</button>
-                                                <span class="qty-val">1</span>
-                                                <button type="button" class="qty-inc">+</button>
-                                            </div>
-                                            <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-
-                    <!-- Common Footer Placeholder Start -->
-                    <div id="footer-placeholder"></div>
-                    <!-- Common Footer Placeholder End -->
                 </div>
+
+                <!-- Best Food Menu Section Start -->
+                <section class="best-food-menu-two fix section-padding pt-0">
+                    <div class="shape">
+                        <img src="assets/img/home-2/shape8.png" alt="img">
+                    </div>
+                    <div class="container">
+                        <div class="section-title text-center">
+                            <span class="sub-title tz-sub-tilte tz-sub-anim tx-subTitle">Similar Products</span>
+                            <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                Your Can Choose This Products
+                            </h2>
+                            <div class="sec-line mt-3">
+                                <img src="assets/img/home-1/sec-line.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="similar-grid">
+                            <div class="shop-list-inner">
+                                <div class="shape">
+                                    <svg width="179" height="322" viewBox="0 0 179 322" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z"
+                                            fill="#F4F1EA" />
+                                    </svg>
+                                </div>
+                                <div class="thumb">
+                                    <img src="assets/img/home-4/food-7.png" alt="img">
+                                </div>
+                                <div class="content">
+                                    <h2 class="title">
+                                        <a href="shop-details.html">Classic Beef Hotdog</a>
+                                    </h2>
+                                    <span class="price d-block mb-2">C$17.93</span>
+                                    <div class="star">
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-light fa-star"></i>
+                                    </div>
+                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
+                                    <div class="qty-wrap mt-3">
+                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                        <div class="qty-stepper" hidden>
+                                            <button type="button" class="qty-dec">&minus;</button>
+                                            <span class="qty-val">1</span>
+                                            <button type="button" class="qty-inc">+</button>
+                                        </div>
+                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-list-inner">
+                                <div class="shape">
+                                    <svg width="179" height="322" viewBox="0 0 179 322" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z"
+                                            fill="#F4F1EA" />
+                                    </svg>
+                                </div>
+                                <div class="thumb">
+                                    <img src="assets/img/home-4/food-8.png" alt="img">
+                                </div>
+                                <div class="content">
+                                    <h2 class="title">
+                                        <a href="shop-details.html">Crispy Onion Rings</a>
+                                    </h2>
+                                    <span class="price d-block mb-2">C$9.65</span>
+                                    <div class="star">
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-light fa-star"></i>
+                                    </div>
+                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
+                                    <div class="qty-wrap mt-3">
+                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                        <div class="qty-stepper" hidden>
+                                            <button type="button" class="qty-dec">&minus;</button>
+                                            <span class="qty-val">1</span>
+                                            <button type="button" class="qty-inc">+</button>
+                                        </div>
+                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-list-inner">
+                                <div class="shape">
+                                    <svg width="179" height="322" viewBox="0 0 179 322" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z"
+                                            fill="#F4F1EA" />
+                                    </svg>
+                                </div>
+                                <div class="thumb">
+                                    <img src="assets/img/home-4/food-9.png" alt="img">
+                                </div>
+                                <div class="content">
+                                    <h2 class="title">
+                                        <a href="shop-details.html">Cheesy Beef Nachos</a>
+                                    </h2>
+                                    <span class="price d-block mb-2">C$35.87</span>
+                                    <div class="star">
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-light fa-star"></i>
+                                    </div>
+                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
+                                    <div class="qty-wrap mt-3">
+                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                        <div class="qty-stepper" hidden>
+                                            <button type="button" class="qty-dec">&minus;</button>
+                                            <span class="qty-val">1</span>
+                                            <button type="button" class="qty-inc">+</button>
+                                        </div>
+                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-list-inner">
+                                <div class="shape">
+                                    <svg width="179" height="322" viewBox="0 0 179 322" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20 322C8.95429 322 -3.91405e-07 313.046 -8.74228e-07 302L-1.32008e-05 20C-1.36837e-05 8.95432 8.95429 -3.91405e-07 20 -8.74228e-07L106.422 -4.65184e-06C112.53 -4.91886e-06 118.299 2.78857 121.832 7.77209C137.353 29.6681 179 94.604 179 161C179 227.396 137.354 292.332 121.832 314.228C118.299 319.211 112.53 322 106.422 322L20 322Z"
+                                            fill="#F4F1EA" />
+                                    </svg>
+                                </div>
+                                <div class="thumb">
+                                    <img src="assets/img/home-4/food-10.png" alt="img">
+                                </div>
+                                <div class="content">
+                                    <h2 class="title">
+                                        <a href="shop-details.html">Crispy Chicken Burger</a>
+                                    </h2>
+                                    <span class="price d-block mb-2">C$19.31</span>
+                                    <div class="star">
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-etch fa-solid fa-star"></i>
+                                        <i class="fa-light fa-star"></i>
+                                    </div>
+                                    <p class="text">Find top-rated dinnerware, flatware and barware at Foodies.</p>
+                                    <div class="qty-wrap mt-3">
+                                        <button type="button" class="add-cart-btn">ADD <span>+</span></button>
+                                        <div class="qty-stepper" hidden>
+                                            <button type="button" class="qty-dec">&minus;</button>
+                                            <span class="qty-val">1</span>
+                                            <button type="button" class="qty-inc">+</button>
+                                        </div>
+                                        <a href="shop-cart.html" class="qty-cart" hidden>View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Common Footer Placeholder Start -->
+                <div id="footer-placeholder"></div>
+                <!-- Common Footer Placeholder End -->
             </div>
         </div>
+    </div>
 
-    
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< Gsap Min Js >>-->
-        <script src="assets/js/gsap.min.js"></script>
-        <!--<< ScrollTrigger Min Js >>-->
-        <script src="assets/js/ScrollTrigger.min.js"></script>
-        <!--<< ScrollSmoother Min Js >>-->
-        <script src="assets/js/ScrollSmoother.min.js"></script>
-        <!--<< ScrollToPlugin Min Js >>-->
-        <script src="assets/js/ScrollToPlugin.min.js"></script>
-        <!--<< SplitText Min Js >>-->
-        <script src="assets/js/SplitText.min.js"></script>
-        <!--<< TextPlugin Min Js >>-->
-        <script src="assets/js/TextPlugin.js"></script>
-        <!--<< Chroma Min Js >>-->
-        <script src="assets/js/chroma.min.js"></script>
-        <!--<< Three Js >>-->
-        <script src="assets/js/three.js"></script>
-        <!--<< Ripple Js >>-->
-        <script src="assets/js/ripple-2.js"></script>
-        <!--<< Webgl Min Js >>-->
-        <script src="assets/js/webgl.js"></script>
-        <!--<< nice-selec Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Common Header & Footer Loader >>-->
-        <script src="assets/js/header-footer.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
-        <script type="module" src="assets/js/distortion-img.js"></script>
-        <script>
+
+    <!--<< All JS Plugins >>-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--<< Bootstrap Js >>-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--<< Gsap Min Js >>-->
+    <script src="assets/js/gsap.min.js"></script>
+    <!--<< ScrollTrigger Min Js >>-->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!--<< ScrollSmoother Min Js >>-->
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <!--<< ScrollToPlugin Min Js >>-->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!--<< SplitText Min Js >>-->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!--<< TextPlugin Min Js >>-->
+    <script src="assets/js/TextPlugin.js"></script>
+    <!--<< Chroma Min Js >>-->
+    <script src="assets/js/chroma.min.js"></script>
+    <!--<< Three Js >>-->
+    <script src="assets/js/three.js"></script>
+    <!--<< Ripple Js >>-->
+    <script src="assets/js/ripple-2.js"></script>
+    <!--<< Webgl Min Js >>-->
+    <script src="assets/js/webgl.js"></script>
+    <!--<< nice-selec Js >>-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!--<< Waypoints Js >>-->
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <!--<< Counterup Js >>-->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!--<< Swiper Slider Js >>-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!--<< MeanMenu Js >>-->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!--<< Magnific Popup Js >>-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!--<< Wow Animation Js >>-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--<< Common Header & Footer Loader >>-->
+    <script src="assets/js/header-footer.js"></script>
+    <!--<< Main.js >>-->
+    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/distortion-img.js"></script>
+    <script>
         document.querySelectorAll('.similar-grid .qty-wrap').forEach(function (wrap) {
             var add = wrap.querySelector('.add-cart-btn');
             var step = wrap.querySelector('.qty-stepper');
@@ -481,5 +750,6 @@
             }
         })();
     </script>
-    </body>
+</body>
+
 </html>
