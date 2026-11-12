@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/customise-popup.css">
     <style>
         .cart-total-area .cart-summary {
             margin-bottom: 20px;
@@ -286,11 +287,12 @@
             justify-content: center;
             color: #FF7C2B;
             font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 0;
         }
 
         .similar-grid .shop-list-inner .content .title {
-            font-size: 24px;
+            font-size: 20px;
+            margin-bottom: 12px;
             font-weight: 500;
         }
 
@@ -302,11 +304,11 @@
             font-size: 14px;
             font-weight: 500;
             color: #76756D;
-            margin: 10px auto 0;
+            margin: 0 auto;
         }
 
         .similar-grid .shop-list-inner .content .price {
-            font-size: 26px;
+            font-size: 20px;
             font-weight: 700;
             color: #0B7A3B;
         }
@@ -404,6 +406,7 @@
                                                 </div>
                                             </td>
                                             <td class="text-center">
+                                                <del class="old-price">C$21.39</del>
                                                 <span class="price-usd">
                                                     C$17.11
                                                 </span>
@@ -434,6 +437,7 @@
                                                 </div>
                                             </td>
                                             <td class="text-center">
+                                                <del class="old-price">C$43.99</del>
                                                 <span class="price-usd">
                                                     C$35.19
                                                 </span>
@@ -543,7 +547,7 @@
                                     <h2 class="title">
                                         <a href="shop-details.html">Classic Beef Hotdog</a>
                                     </h2>
-                                    <span class="price d-block mb-2">C$17.93</span>
+                                    <div class="price-row mb-2"><del class="old-price">C$22.41</del><span class="price">C$17.93</span></div>
                                     <div class="star">
                                         <i class="fa-etch fa-solid fa-star"></i>
                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -579,7 +583,7 @@
                                     <h2 class="title">
                                         <a href="shop-details.html">Crispy Onion Rings</a>
                                     </h2>
-                                    <span class="price d-block mb-2">C$9.65</span>
+                                    <div class="price-row mb-2"><del class="old-price">C$12.06</del><span class="price">C$9.65</span></div>
                                     <div class="star">
                                         <i class="fa-etch fa-solid fa-star"></i>
                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -615,7 +619,7 @@
                                     <h2 class="title">
                                         <a href="shop-details.html">Cheesy Beef Nachos</a>
                                     </h2>
-                                    <span class="price d-block mb-2">C$35.87</span>
+                                    <div class="price-row mb-2"><del class="old-price">C$44.84</del><span class="price">C$35.87</span></div>
                                     <div class="star">
                                         <i class="fa-etch fa-solid fa-star"></i>
                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -651,7 +655,7 @@
                                     <h2 class="title">
                                         <a href="shop-details.html">Crispy Chicken Burger</a>
                                     </h2>
-                                    <span class="price d-block mb-2">C$19.31</span>
+                                    <div class="price-row mb-2"><del class="old-price">C$24.14</del><span class="price">C$19.31</span></div>
                                     <div class="star">
                                         <i class="fa-etch fa-solid fa-star"></i>
                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -727,20 +731,7 @@
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
     <script type="module" src="assets/js/distortion-img.js"></script>
-    <script>
-        document.querySelectorAll('.similar-grid .qty-wrap').forEach(function (wrap) {
-            var add = wrap.querySelector('.add-cart-btn');
-            var step = wrap.querySelector('.qty-stepper');
-            var val = wrap.querySelector('.qty-val');
-            var cart = wrap.querySelector('.qty-cart');
-            add.addEventListener('click', function () { add.hidden = true; step.hidden = false; cart.hidden = false; val.textContent = '1'; });
-            wrap.querySelector('.qty-inc').addEventListener('click', function () { val.textContent = String(parseInt(val.textContent, 10) + 1); });
-            wrap.querySelector('.qty-dec').addEventListener('click', function () {
-                var n = parseInt(val.textContent, 10) - 1;
-                if (n < 1) { step.hidden = true; cart.hidden = true; add.hidden = false; val.textContent = '1'; } else { val.textContent = String(n); }
-            });
-        });
-    </script>
+    <script src="assets/js/customise-popup.js"></script>
     <script>
         (function () {
             var note = document.getElementById('order-note');

@@ -2548,6 +2548,79 @@ span {
   text-align: center;
   border-radius: 4px 11.5px 11.5px 4px;
 }
+.header-section-2 .middle-header-2 .order-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.header-section-2 .middle-header-2 .order-info .icon img {
+  width: 60px;
+  height: auto;
+}
+.header-section-2 .middle-header-2 .order-info .info-cont p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #575756;
+  line-height: 1.2;
+}
+.header-section-2 .middle-header-2 .order-info .info-cont a {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Signika", sans-serif;
+  color: var(--header);
+}
+.header-main .header-right .shop-icon-right {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 12px;
+  margin: 0;
+}
+.header-main .header-right .shop-icon-right .shop-icon {
+  margin: 0;
+  vertical-align: middle;
+}
+.header-section-2 .middle-header-2 .middle-header-items-2 .shop-icon-right {
+  align-self: center;
+  margin: 0;
+}
+@media (max-width: 1199px) {
+  .header-main .header-right .shop-icon-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.header-main .header-right .shop-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #F4F1EA;
+  border-radius: 50%;
+  color: var(--header);
+  position: relative;
+}
+.header-main .header-right .shop-icon:hover {
+  background: var(--theme);
+  color: var(--header);
+}
+.header-main .header-right .shop-icon span {
+  width: 19px;
+  height: 19px;
+  line-height: 19px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--theme);
+  color: var(--header);
+  display: inline-block;
+  font-size: 15px;
+  position: absolute;
+  top: -6px;
+  right: -9px;
+}
 .header-section-2 .middle-header-2 {
   background: #F4F1EA;
   padding: 5px 0;
@@ -4266,6 +4339,13 @@ span {
   position: relative;
   z-index: 9;
   margin-top: 165px;
+  background-color: #6b6b6b;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+.breadcrumb-wrapper canvas {
+  filter: brightness(0.55);
 }
 @media (max-width: 1199px) {
   .breadcrumb-wrapper {
@@ -5116,9 +5196,22 @@ span {
 .footer-widget-wrapper .footer-widget-items .recent-items li .thumb {
   border-radius: 4px;
   position: relative;
+  flex: 0 0 86px;
+  width: 86px;
+  height: 84px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
 }
 .footer-widget-wrapper .footer-widget-items .recent-items li .thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 4px;
+}
+.footer-widget-wrapper .footer-widget-items .recent-items li .content {
+  flex: 1;
+  min-width: 0;
 }
 .footer-widget-wrapper .footer-widget-items .recent-items li .content span {
   font-size: 14px;
@@ -5164,11 +5257,39 @@ span {
   font-size: 16px;
   color: var(--white);
   display: flex;
+  align-items: flex-start;
   gap: 15px;
+  line-height: 1.7;
   margin-top: 20px;
 }
 .footer-widget-wrapper .footer-widget-items .footer-content .contact-items p i {
   color: var(--theme);
+  margin-top: 6px;
+}
+.footer-widget-wrapper .footer-widget-items .footer-content .social-icon {
+  gap: 10px;
+  margin-top: 20px;
+}
+.footer-widget-wrapper .footer-widget-items .footer-content .social-icon a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+.footer-widget-wrapper .footer-widget-items .footer-content .social-icon a:hover {
+  background: var(--theme);
+  border-color: var(--theme);
+}
+.footer-widget-items .footer-bottom,
+.footer-widget-items .footer-bottom-wrapper {
+  border: none !important;
+  border-top: none !important;
+  padding: 0 !important;
 }
 .footer-widget-wrapper.style-widget-wrapper-4 .footer-widget-items .widget-head .widget-title {
   color: #032532;
@@ -5327,6 +5448,9 @@ span {
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   padding: 25px 0 15px;
+}
+.footer-section .footer-bottom {
+  border-top: none;
 }
 .footer-bottom .footer-bottom-wrapper {
   display: flex;

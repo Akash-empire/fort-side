@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/customise-popup.css">
     <style>
         .qty-wrap {
             display: flex;
@@ -181,20 +182,23 @@
 
         #list .shop-list-inner .content .star {
             justify-content: center;
+            margin-bottom: 0;
         }
 
         #list .shop-list-inner .content .title {
-            font-size: 24px;
+            font-size: 20px;
+            margin-bottom: 12px;
         }
 
         #list .shop-list-inner .content .text {
+            margin-top: 0;
             margin-left: auto;
             margin-right: auto;
             font-size: 14px;
         }
 
         #list .shop-list-inner .content .price {
-            font-size: 26px;
+            font-size: 20px;
             font-weight: 700;
             color: #0B7A3B;
         }
@@ -202,6 +206,34 @@
         #list .qty-wrap {
             justify-content: center;
         }
+
+        /* Keep every ADD button at the bottom of its card */
+        #list .shop-list-inner {
+            height: 100%;
+        }
+
+        #list .shop-list-inner .content {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+        }
+
+        #list .shop-list-inner .content .qty-wrap {
+            margin-top: auto !important;
+            padding-top: 16px;
+        }
+
+        /* Food descriptions: 2 lines, with an inline bold "Read more" */
+        .read-more {
+            font-weight: 700;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
@@ -459,7 +491,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-7.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -477,7 +509,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$17.93</span>
+                                                            <del class="old-price">C$22.41</del><span class="price">C$17.93</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -495,7 +527,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-8.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -513,7 +545,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$9.65</span>
+                                                            <del class="old-price">C$12.06</del><span class="price">C$9.65</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -531,7 +563,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-9.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -549,7 +581,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$35.87</span>
+                                                            <del class="old-price">C$44.84</del><span class="price">C$35.87</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -567,7 +599,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-10.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -585,7 +617,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$19.31</span>
+                                                            <del class="old-price">C$24.14</del><span class="price">C$19.31</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -603,7 +635,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-11.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -621,7 +653,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$22.07</span>
+                                                            <del class="old-price">C$27.59</del><span class="price">C$22.07</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -639,7 +671,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-12.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -657,7 +689,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$13.79</span>
+                                                            <del class="old-price">C$17.24</del><span class="price">C$13.79</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -675,7 +707,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-13.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -693,7 +725,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$11.03</span>
+                                                            <del class="old-price">C$13.79</del><span class="price">C$11.03</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -711,7 +743,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-14.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -729,7 +761,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$13.79</span>
+                                                            <del class="old-price">C$17.24</del><span class="price">C$13.79</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -747,7 +779,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-15.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -765,7 +797,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$22.07</span>
+                                                            <del class="old-price">C$27.59</del><span class="price">C$22.07</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -783,7 +815,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-16.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -801,7 +833,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$13.79</span>
+                                                            <del class="old-price">C$17.24</del><span class="price">C$13.79</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -819,7 +851,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-17.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -837,7 +869,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$11.03</span>
+                                                            <del class="old-price">C$13.79</del><span class="price">C$11.03</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -855,7 +887,7 @@
                                                     </div>
 
                                                     <div class="thumb">
-                                                        <img src="assets/img/home-4/food-18.png" alt="img">
+                                                        <img src="assets/img/inner/shop-2.png" alt="img">
                                                     </div>
                                                     <div class="content">
                                                         <div class="star">
@@ -873,7 +905,7 @@
                                                         </p>
                                                         <div class="pricing-item">
 
-                                                            <span class="price">C$13.79</span>
+                                                            <del class="old-price">C$17.24</del><span class="price">C$13.79</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -900,13 +932,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">8-Piece Wings</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -946,7 +978,7 @@
                                                         <a href="shop-details.html">Garlic Parmesan Mozzarella
                                                             Sticks</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$10.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$13.74</del><span class="price">C$10.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -979,13 +1011,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chicken Spring Rolls</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.99</del><span class="price">C$7.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1017,13 +1049,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Large Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$6.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$8.11</del><span class="price">C$6.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1055,13 +1087,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Regular Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.61</del><span class="price">C$4.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1092,13 +1124,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Classic Nachos</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1131,13 +1163,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">BBQ Chicken Nachos</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$15.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$19.99</del><span class="price">C$15.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1170,13 +1202,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Spicy Chicken Nachos</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$15.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$19.99</del><span class="price">C$15.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1210,13 +1242,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Philly Cheesesteak Nachos</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$16.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$21.24</del><span class="price">C$16.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1249,13 +1281,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Philly Cheesesteak Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1287,13 +1319,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Buffalo Chicken Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$8.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$10.61</del><span class="price">C$8.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1331,7 +1363,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Bacon Cheese Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1363,13 +1395,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Classic Loaded Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$9.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$12.49</del><span class="price">C$9.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1401,13 +1433,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Buffalo Chicken Poutine</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$8.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$11.24</del><span class="price">C$8.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1439,13 +1471,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Garlic Shrimp Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1477,13 +1509,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Poutine</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1515,13 +1547,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Spicy Philly</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$14.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$18.74</del><span class="price">C$14.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1554,13 +1586,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mushroom Philly</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$14.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$18.74</del><span class="price">C$14.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1592,13 +1624,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Classic Philly</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$13.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$17.49</del><span class="price">C$13.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1630,13 +1662,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chicken Philly</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$13.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$17.49</del><span class="price">C$13.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1668,13 +1700,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Smoke House Royale</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$14.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$18.74</del><span class="price">C$14.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1714,7 +1746,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Double Classic Cheeseburger</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1747,13 +1779,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Jalape&#241;o Crunch Melt</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$13.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$17.49</del><span class="price">C$13.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1786,13 +1818,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Maple Bacon Fort Side</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$13.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$17.49</del><span class="price">C$13.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1825,13 +1857,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Fort Side Classic Burger</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$9.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$12.49</del><span class="price">C$9.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1864,13 +1896,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Grilled Chicken Burger</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1903,13 +1935,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Hot Chicken Burger</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1942,13 +1974,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Crispy Chicken Burger</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -1981,13 +2013,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Plant-Based Burger</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$13.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$17.49</del><span class="price">C$13.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2020,13 +2052,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Sweet Thai Chicken Wrap</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2058,13 +2090,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Spicy Chicken Wrap</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2102,7 +2134,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Big Dipper</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$15.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$19.99</del><span class="price">C$15.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2136,13 +2168,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Hot Homemade Beef Sandwich</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$11.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$14.99</del><span class="price">C$11.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2175,13 +2207,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Hot Homemade Turkey Sandwich</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2214,13 +2246,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Grilled Ham &amp; Cheese</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$12.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$16.24</del><span class="price">C$12.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2253,13 +2285,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">BLT</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$13.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$17.49</del><span class="price">C$13.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2292,13 +2324,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Shrimp Teriyaki Bowl</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$16.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$21.24</del><span class="price">C$16.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2331,13 +2363,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Beef Teriyaki Bowl</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$15.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$19.99</del><span class="price">C$15.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2370,13 +2402,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chicken Teriyaki Bowl</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$14.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$18.74</del><span class="price">C$14.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2409,13 +2441,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mushroom Penne Alfredo</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$16.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$21.24</del><span class="price">C$16.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2447,13 +2479,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Spaghetti Bolognese</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$15.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$19.99</del><span class="price">C$15.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2491,7 +2523,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Salisbury Steak</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$17.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$22.49</del><span class="price">C$17.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2522,13 +2554,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Fish &amp; Chips</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$16.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$21.24</del><span class="price">C$16.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2560,13 +2592,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chicken Fingers Meal</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$17.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$22.49</del><span class="price">C$17.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2599,14 +2631,14 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Plant-Based Chicken-Style Power
                                                             Bowl</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$15.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$19.99</del><span class="price">C$15.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2639,13 +2671,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chicken Fingers &amp; Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$9.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$12.49</del><span class="price">C$9.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2677,13 +2709,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chicken Nuggets &amp; Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$9.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$12.49</del><span class="price">C$9.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2715,13 +2747,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Kids Chicken Burger &amp; Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$9.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$12.49</del><span class="price">C$9.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2753,13 +2785,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Kids Beef Burger &amp; Fries</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$9.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$12.49</del><span class="price">C$9.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2791,13 +2823,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Kids Poutine &amp; Drink</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$8.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$11.24</del><span class="price">C$8.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2829,13 +2861,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Latte</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2873,7 +2905,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Cappuccino</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.69</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.61</del><span class="price">C$3.69</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2905,13 +2937,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mocha</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2943,13 +2975,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Caramel Latte</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -2981,13 +3013,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">French Vanilla</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3019,13 +3051,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mocha Latte</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3057,13 +3089,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Americano</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.36</del><span class="price">C$3.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3095,13 +3127,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Espresso</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.36</del><span class="price">C$3.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3133,13 +3165,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Hot Chocolate</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3171,13 +3203,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Regular Coffee</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.11</del><span class="price">C$2.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3208,13 +3240,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Caramel Frappe</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$5.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$6.86</del><span class="price">C$5.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3252,7 +3284,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mocha Frappe</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$5.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$6.86</del><span class="price">C$5.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3284,13 +3316,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Vanilla Frappe</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$5.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$6.86</del><span class="price">C$5.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3322,13 +3354,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Caramel Iced Latte</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.19</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.24</del><span class="price">C$4.19</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3360,13 +3392,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mocha Iced Latte</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.19</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.24</del><span class="price">C$4.19</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3398,13 +3430,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Iced Latte</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.19</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.24</del><span class="price">C$4.19</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3435,13 +3467,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Black Iced Coffee</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.74</del><span class="price">C$2.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3472,13 +3504,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Strawberry Banana Smoothie</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.99</del><span class="price">C$7.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3511,13 +3543,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mango Tropical Smoothie</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.99</del><span class="price">C$7.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3550,13 +3582,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Green Smoothie</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.99</del><span class="price">C$7.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3589,13 +3621,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mixed Berry Smoothie</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.99</del><span class="price">C$7.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3634,7 +3666,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Vanilla Milkshake</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.61</del><span class="price">C$4.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3664,13 +3696,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chocolate Milkshake</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.61</del><span class="price">C$4.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3700,13 +3732,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Strawberry Milkshake</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.61</del><span class="price">C$4.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3736,13 +3768,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Oreo Milkshake</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.61</del><span class="price">C$4.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3772,13 +3804,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mango Lemonade</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3810,13 +3842,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Strawberry Lemonade</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.99</del><span class="price">C$3.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3848,13 +3880,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Lemonade</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$3.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$4.36</del><span class="price">C$3.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3886,13 +3918,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Peach Iced Tea</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.19</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.24</del><span class="price">C$4.19</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3924,13 +3956,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Bottled Water</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.11</del><span class="price">C$2.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -3960,13 +3992,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Canned Pop</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.11</del><span class="price">C$2.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4002,7 +4034,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Pepsi</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4032,13 +4064,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Diet Pepsi</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4068,13 +4100,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Crush Orange</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4104,13 +4136,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Mug Root Beer</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4140,13 +4172,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Dr Pepper</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4176,13 +4208,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Ginger Ale</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4212,13 +4244,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Brisk Lemon Iced Tea</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$3.12</del><span class="price">C$2.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4248,13 +4280,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-9.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Rockstar Original</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.62</del><span class="price">C$4.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4284,13 +4316,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-10.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Rockstar Sugar Free</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.62</del><span class="price">C$4.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4320,13 +4352,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-1.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">New York Cheesecake</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.99</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.99</del><span class="price">C$7.99</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4364,7 +4396,7 @@
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Ice Cream Sundae</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$4.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$5.61</del><span class="price">C$4.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4396,14 +4428,14 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-3.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Chocolate Brownie &amp; Ice
                                                             Cream</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$7.49</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$9.36</del><span class="price">C$7.49</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4435,13 +4467,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-4.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Creamy Garlic</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$1.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$1.88</del><span class="price">C$1.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4472,13 +4504,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-5.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Ranch</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$1.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$1.88</del><span class="price">C$1.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4509,13 +4541,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-6.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Buffalo</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$1.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$1.88</del><span class="price">C$1.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4546,13 +4578,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-7.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Barbecue</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$1.50</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$1.88</del><span class="price">C$1.50</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4583,13 +4615,13 @@
                                                     </svg>
                                                 </div>
                                                 <div class="thumb">
-                                                    <img src="assets/img/inner/shop-8.png" alt="img">
+                                                    <img src="assets/img/inner/shop-2.png" alt="img">
                                                 </div>
                                                 <div class="content">
                                                     <h2 class="title">
                                                         <a href="shop-details.html">Side of Gravy</a>
                                                     </h2>
-                                                    <span class="price d-block mb-2">C$2.00</span>
+                                                    <div class="price-row mb-2"><del class="old-price">C$2.50</del><span class="price">C$2.00</span></div>
                                                     <div class="star">
                                                         <i class="fa-etch fa-solid fa-star"></i>
                                                         <i class="fa-etch fa-solid fa-star"></i>
@@ -4678,19 +4710,65 @@
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
     <script type="module" src="assets/js/distortion-img.js"></script>
+    <script src="assets/js/customise-popup.js"></script>
     <script>
-        document.querySelectorAll('.qty-wrap').forEach(function (wrap) {
-            var add = wrap.querySelector('.add-cart-btn');
-            var step = wrap.querySelector('.qty-stepper');
-            var val = wrap.querySelector('.qty-val');
-            var cart = wrap.querySelector('.qty-cart');
-            add.addEventListener('click', function () { add.hidden = true; step.hidden = false; cart.hidden = false; val.textContent = '1'; });
-            wrap.querySelector('.qty-inc').addEventListener('click', function () { val.textContent = String(parseInt(val.textContent, 10) + 1); });
-            wrap.querySelector('.qty-dec').addEventListener('click', function () {
-                var n = parseInt(val.textContent, 10) - 1;
-                if (n < 1) { step.hidden = true; cart.hidden = true; add.hidden = false; val.textContent = '1'; } else { val.textContent = String(n); }
+        // Show only 2 lines of each food description; "Read more" continues the text inline in bold
+        (function () {
+            document.querySelectorAll('#list .shop-list-inner .content .text').forEach(function (p) {
+                var full = p.textContent.replace(/\s+/g, ' ').trim();
+                var expanded = false;
+                var lastW = 0;
+
+                function link(label) {
+                    var s = document.createElement('span');
+                    s.className = 'read-more';
+                    s.setAttribute('role', 'button');
+                    s.tabIndex = 0;
+                    s.textContent = label;
+                    return s;
+                }
+
+                function build(n) {
+                    p.textContent = full.slice(0, n).replace(/[\s,.;:–-]+$/, '') + '… ';
+                    p.appendChild(link('Read more'));
+                }
+
+                function render() {
+                    lastW = p.clientWidth;
+                    if (!lastW) return; // card is hidden by a filter
+                    var cs = getComputedStyle(p);
+                    var lh = parseFloat(cs.lineHeight);
+                    if (isNaN(lh)) lh = parseFloat(cs.fontSize) * 1.5;
+                    var maxH = lh * 2 + 2;
+                    if (expanded) {
+                        p.textContent = full + ' ';
+                        p.appendChild(link('Read less'));
+                        return;
+                    }
+                    p.textContent = full;
+                    if (p.getBoundingClientRect().height <= maxH) return; // already fits in 2 lines
+                    var lo = 0, hi = full.length;
+                    while (lo < hi) {
+                        var mid = Math.ceil((lo + hi) / 2);
+                        build(mid);
+                        if (p.getBoundingClientRect().height <= maxH) lo = mid; else hi = mid - 1;
+                    }
+                    build(lo);
+                }
+
+                function toggle() { expanded = !expanded; render(); }
+                p.addEventListener('click', function (e) { if (e.target.classList.contains('read-more')) toggle(); });
+                p.addEventListener('keydown', function (e) {
+                    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('read-more')) { e.preventDefault(); toggle(); }
+                });
+                if ('ResizeObserver' in window) {
+                    new ResizeObserver(function () { if (p.clientWidth && p.clientWidth !== lastW) render(); }).observe(p);
+                }
+                window.addEventListener('load', render);
+                if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
+                render();
             });
-        });
+        })();
     </script>
     <script>
         (function () {
