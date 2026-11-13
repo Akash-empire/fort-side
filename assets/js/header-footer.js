@@ -71,6 +71,9 @@
         const $footer = $("#footer-placeholder, #footer, #footer-area");
 
         if ($header.length) {
+            // Sign In / Sign Up popup (opens from the header user icon)
+            $.getScript("assets/js/auth-popup.js");
+
             $header.load("header.html", function (response, status, xhr) {
                 if (status === "success" || status === "notmodified") {
                     initHeaderPlugins();

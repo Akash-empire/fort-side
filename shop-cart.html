@@ -176,9 +176,11 @@
             flex: 0 1 440px;
             width: 100%;
             max-width: 440px;
-            border: 1px solid rgba(60, 60, 60, 0.14);
-            border-radius: 10px;
-            padding: 30px;
+            background: #fff;
+            border: 1px solid rgba(60, 60, 60, 0.10);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 28px;
         }
 
         .order-note-box h2 {
@@ -232,23 +234,69 @@
         }
 
         .schedule-box {
-            border: 1px solid rgba(60, 60, 60, 0.14);
-            border-radius: 10px;
-            padding: 30px;
+            background: #fff;
+            border: 1px solid rgba(60, 60, 60, 0.10);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+        }
+
+        .schedule-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .schedule-icon {
+            flex: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: rgba(255, 194, 34, 0.22);
+            color: #b8860b;
+            font-size: 22px;
         }
 
         .schedule-box h2 {
-            margin-bottom: 14px;
+            margin: 0;
+            font-size: 32px;
+            line-height: 1.1;
+        }
+
+        .schedule-sub {
+            display: block;
+            margin-top: 4px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .schedule-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
 
         .schedule-option {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            margin: 0;
+            padding: 14px 16px;
+            border: 1.5px solid #ececec;
+            border-radius: 12px;
+            background: #fafafa;
             font-size: 16px;
-            color: var(--text);
+            font-weight: 500;
+            color: var(--header);
             cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .schedule-option:hover {
+            border-color: rgba(255, 194, 34, 0.9);
         }
 
         .schedule-option[hidden] {
@@ -256,38 +304,102 @@
         }
 
         .schedule-option input {
-            width: 18px;
-            height: 18px;
-            margin: 0;
-            accent-color: #FFC222;
-            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .schedule-option span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding-right: 34px;
+        }
+
+        .schedule-option span i {
+            width: 20px;
+            text-align: center;
+            color: #b8860b;
+        }
+
+        /* radio indicator */
+        .schedule-option span::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            border: 2px solid #cfcfcf;
+            border-radius: 50%;
+            background: #fff;
+            transition: 0.25s;
+        }
+
+        .schedule-option:has(input:checked) {
+            border-color: var(--theme);
+            background: rgba(255, 194, 34, 0.12);
+        }
+
+        .schedule-option:has(input:checked) span::after {
+            border-color: var(--theme);
+            background: radial-gradient(circle, var(--theme) 0 45%, #fff 50%);
+        }
+
+        .schedule-option:has(input:focus-visible) {
+            outline: 2px solid var(--theme);
+            outline-offset: 2px;
         }
 
         .schedule-note {
-            margin: 6px 0 16px;
+            margin: 16px 0 18px;
+            padding: 12px 14px;
+            border-left: 3px solid #FFC222;
+            border-radius: 8px;
+            background: #fff8e6;
             font-size: 14px;
-            line-height: 1.7;
-            color: var(--text);
+            line-height: 1.6;
+            color: #6b5a2a;
+        }
+
+        #schedule-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            transition: opacity 0.25s;
         }
 
         .schedule-label {
             display: block;
-            margin: 14px 0 8px;
-            font-size: 16px;
-            font-weight: 500;
+            margin: 0 0 6px;
+            font-size: 14px;
+            font-weight: 600;
             color: var(--header);
         }
 
         .schedule-select {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid rgba(60, 60, 60, 0.14);
-            border-radius: 10px;
-            background: #fff;
+            height: 50px;
+            padding: 0 40px 0 14px;
+            border: 1.5px solid #e4e4e7;
+            border-radius: 12px;
+            background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+            -webkit-appearance: none;
+            appearance: none;
             color: var(--header);
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: 500;
             font-family: inherit;
             outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .schedule-select:hover {
+            border-color: rgba(255, 194, 34, 0.9);
         }
 
         .schedule-select:focus {
@@ -295,9 +407,36 @@
         }
 
         .schedule-select:disabled {
-            background: #f4f1ea;
+            background-color: #f4f1ea;
             color: #9a9a9a;
             cursor: not-allowed;
+        }
+
+        .schedule-date {
+            padding-right: 12px;
+            background-image: none;
+        }
+
+        .schedule-date::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .schedule-date-error {
+            grid-column: 1 / -1;
+            margin: 8px 0 0;
+            font-size: 13px;
+            color: #b3261e;
+        }
+
+        .schedule-field:first-child {
+            min-width: 0;
+        }
+
+        @media (max-width: 575px) {
+            #schedule-fields {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 991px) {
@@ -590,24 +729,6 @@
                                 <a href="checkout.html" class="theme-btn">Proceed to Checkout</a>
                             </div>
                             <div class="cart-side-col">
-                            <div class="schedule-box">
-                                <h2>When</h2>
-                                <label class="schedule-option" id="when-now-option" hidden>
-                                    <input type="radio" name="when" id="when-now" value="now">
-                                    <span>As Soon As Possible</span>
-                                </label>
-                                <label class="schedule-option">
-                                    <input type="radio" name="when" id="when-later" value="later" checked>
-                                    <span>Schedule For Later</span>
-                                </label>
-                                <p class="schedule-note" id="schedule-note"></p>
-                                <div id="schedule-fields">
-                                    <label for="schedule-day" class="schedule-label">Day</label>
-                                    <select id="schedule-day" class="schedule-select"></select>
-                                    <label for="schedule-time" class="schedule-label">Time</label>
-                                    <select id="schedule-time" class="schedule-select"></select>
-                                </div>
-                            </div>
                             <div class="order-note-box">
                                 <h2>Order Note</h2>
                                 <label for="order-note" class="order-note-label">Cooking instructions or special
@@ -615,6 +736,37 @@
                                 <textarea id="order-note" rows="8" maxlength="300"
                                     placeholder="E.g. less spicy, no onions, extra sauce on the side, well done burger..."></textarea>
                                 <div class="order-note-count"><span id="order-note-count">0</span>/300 characters</div>
+                            </div>
+                            <div class="schedule-box">
+                                <div class="schedule-head">
+                                    <span class="schedule-icon"><i class="fa-regular fa-clock"></i></span>
+                                    <div>
+                                        <h2>When</h2>
+                                        <span class="schedule-sub">Choose your pickup / delivery time</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-options">
+                                    <label class="schedule-option" id="when-now-option" hidden>
+                                        <input type="radio" name="when" id="when-now" value="now">
+                                        <span><i class="fa-solid fa-bolt"></i> As Soon As Possible</span>
+                                    </label>
+                                    <label class="schedule-option">
+                                        <input type="radio" name="when" id="when-later" value="later" checked>
+                                        <span><i class="fa-regular fa-calendar-days"></i> Schedule For Later</span>
+                                    </label>
+                                </div>
+                                <p class="schedule-note" id="schedule-note"></p>
+                                <div id="schedule-fields">
+                                    <div class="schedule-field">
+                                        <label for="schedule-day" class="schedule-label">Day</label>
+                                        <input type="date" id="schedule-day" class="schedule-select schedule-date">
+                                        <p class="schedule-date-error" id="schedule-date-error" hidden></p>
+                                    </div>
+                                    <div class="schedule-field">
+                                        <label for="schedule-time" class="schedule-label">Time</label>
+                                        <select id="schedule-time" class="schedule-select"></select>
+                                    </div>
+                                </div>
                             </div>
                             </div>
                         </div>
@@ -887,22 +1039,45 @@
             var todayHours = HOURS[now.getDay()];
             var openNow = !!todayHours && nowMin >= todayHours[0] && nowMin < todayHours[1];
 
-            // Day list: next 7 days that still have time slots
+            // Day picker: next 7 days that still have time slots (closed days are rejected)
             var days = [];
             for (var i = 0; i < 7; i++) {
-                if (slotsFor(i, now).length) {
-                    var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
-                    var label = (i === 0 ? 'Today, ' : i === 1 ? 'Tomorrow, ' : '') + DAYS[d.getDay()] + ' ' + MONTHS[d.getMonth()] + ' ' + d.getDate();
-                    days.push({ offset: i, label: label, dow: d.getDay() });
-                }
+                if (slotsFor(i, now).length) days.push(i);
             }
-            daySel.innerHTML = days.map(function (x) { return '<option value="' + x.offset + '">' + x.label + '</option>'; }).join('');
+            var errEl = document.getElementById('schedule-date-error');
+            function iso(offset) {
+                var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + offset);
+                return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+            }
+            function offsetOf(value) {
+                var p = value.split('-');
+                if (p.length !== 3) return -1;
+                var picked = new Date(+p[0], +p[1] - 1, +p[2]);
+                var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                return Math.round((picked - today) / 86400000);
+            }
+            var lastValid = days.length ? days[0] : 0;
+            daySel.min = iso(days.length ? days[0] : 0);
+            daySel.max = iso(6);
+            daySel.value = iso(lastValid);
 
             function fillTimes() {
-                var off = parseInt(daySel.value, 10) || 0;
-                timeSel.innerHTML = slotsFor(off, now).map(function (t) { return '<option value="' + t + '">' + fmt(t) + '</option>'; }).join('');
+                timeSel.innerHTML = slotsFor(lastValid, now).map(function (t) { return '<option value="' + t + '">' + fmt(t) + '</option>'; }).join('');
             }
-            daySel.addEventListener('change', fillTimes);
+            daySel.addEventListener('change', function () {
+                var off = offsetOf(daySel.value);
+                if (days.indexOf(off) === -1) {
+                    var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + off);
+                    errEl.textContent = (off >= 0 && off <= 6 && HOURS[d.getDay()] === null ? 'We\u2019re closed on ' + FULL_DAYS[d.getDay()] + 's' : 'That date isn\u2019t available') + '. Please choose another day.';
+                    errEl.hidden = false;
+                    daySel.value = iso(lastValid);
+                    return;
+                }
+                errEl.hidden = true;
+                lastValid = off;
+                fillTimes();
+            });
+            fillTimes();
             fillTimes();
 
             // Message

@@ -2064,6 +2064,7 @@ span {
   top: 110%;
   left: 0;
   width: 100%;
+  min-width: 290px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -2076,6 +2077,8 @@ span {
 .header-1 .category-dropdown ul {
   list-style: none;
   padding: 10px;
+  max-height: 420px;
+  overflow-y: auto;
   margin: 0;
 }
 .header-1 .category-dropdown ul li {
@@ -24289,7 +24292,7 @@ span {
 .policy-section .policy-wrapper .policy-content h2 {
   font-size: 40px;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 .policy-section .policy-wrapper .policy-content h3 {
   font-size: 32px;
@@ -24311,21 +24314,21 @@ span {
 .policy-section .policy-wrapper .policy-content h4,
 .policy-section .policy-wrapper .policy-content h5,
 .policy-section .policy-wrapper .policy-content h6 {
-  margin: 30px 0 20px;
+  margin: 18px 0 8px;
 }
 .policy-section .policy-wrapper .policy-content p {
   font-size: 17px;
-  line-height: 30px;
+  line-height: 26px;
   color: #666;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 .policy-section .policy-wrapper .policy-content ul {
   padding-left: 20px;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 .policy-section .policy-wrapper .policy-content ul li {
   font-size: 16px;
-  line-height: 30px;
+  line-height: 26px;
   color: #555;
 }
 
